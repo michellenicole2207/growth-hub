@@ -9,7 +9,7 @@ Personal study notes for the ISTQB Certified Tester Foundation Level v4.0 exam.
 | Chapter | Topic | Status |
 |---|---|---|
 | 01 | [Fundamentals of Testing](./chapter-01-fundamentals/) | Done |
-| 02 | [Testing Throughout the SDLC](./chapter-02-testing-throughout-sdlc/) | Pending |
+| 02 | [Testing Throughout the SDLC](./chapter-02-testing-throughout-sdlc/) | Done |
 | 03 | [Static Testing](./chapter-03-static-testing/) | Pending |
 | 04 | [Test Analysis and Design](./chapter-04-test-analysis-design/) | Pending |
 | 05 | [Managing the Test Activities](./chapter-05-managing-test-activities/) | Pending |
