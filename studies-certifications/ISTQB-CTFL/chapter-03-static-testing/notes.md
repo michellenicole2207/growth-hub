@@ -1,158 +1,176 @@
 # Chapter 3 - Static Testing
 
-## Key Concepts
-- Static testing evaluates work products without executing the software
-- Can be performed manually (reviews) or with tools (static analysis)
-- Applies to both verification and validation
-- Detects defects earlier and cheaper than dynamic testing
-- Some defect types can only be found by static testing
+> **The big idea:** You don't need to run software to find problems in it.
+> Reviewing documents, designs, and code before execution often catches defects earlier,
+> cheaper, and in places dynamic testing simply can't reach.
 
 ---
 
 ## 3.1 Static Testing Basics
 
-Static testing does not require code execution. Work products are evaluated through manual examination (e.g., reviews) or with tools (e.g., static analysis). It can improve quality, detect defects, and assess characteristics like readability, completeness, correctness, testability, and consistency.
+Static testing means evaluating a work product **without executing it**. It can be done:
+- **Manually** — through reviews (walkthroughs, inspections, etc.)
+- **With tools** — through static analysis (e.g., linters, code analyzers integrated into CI pipelines)
 
-Static analysis is often incorporated into CI frameworks and is used to detect code defects, evaluate maintainability, and identify security issues.
+It applies to both **verification** and **validation**, and its objectives include improving quality, detecting defects, and assessing readability, completeness, correctness, testability, and consistency.
 
 ---
 
-## 3.1.1 Work Products Examinable by Static Testing
+## What Can Be Examined with Static Testing?
 
-Almost any work product can be examined, including:
+Almost **any work product** — as long as it can be read and understood:
+
 - Requirement specification documents
 - Source code
 - Test plans and test cases
-- Product backlog items
-- Test charters
+- Product backlog items, test charters
 - Project documentation, contracts, and models
 
-For **static analysis**, work products need a formal syntax (e.g., models, code, or text with formal syntax).
+**For static analysis specifically**, the work product needs a formal syntax (e.g., code, models, or structured text).
 
-Work products **not appropriate** for static testing: those difficult to interpret by humans or that should not be analyzed by tools (e.g., 3rd party executable code due to legal reasons).
-
----
-
-## 3.1.2 Value of Static Testing
-
-- Detects defects in the earliest phases of the SDLC (supports the early testing principle)
-- Can identify defects that **cannot** be detected by dynamic testing (e.g., unreachable code, defects in non-executable work products)
-- Builds confidence in work products and evaluates their quality
-- Creates shared understanding among stakeholders
-- Improves communication between involved stakeholders
-- Overall project costs are lower even when reviews have an upfront cost
-- Certain code defects are found more efficiently through static analysis than dynamic testing
+**NOT appropriate** for static testing: work products that are difficult for humans to interpret or that can't be analyzed by tools for legal reasons (e.g., 3rd party executable code).
 
 ---
 
-## 3.1.3 Differences between Static Testing and Dynamic Testing
+## Why Bother? The Value of Static Testing
+
+Static testing is powerful because:
+
+1. **It catches defects early** — before they get baked into later work products and become expensive to fix
+2. **It finds things dynamic testing can't** — like unreachable code, design flaws, or defects in non-executable documents
+3. **It builds shared understanding** — reviewing requirements together aligns the team early
+4. **It's cost-effective** — the upfront cost of reviews is far lower than the cost of finding those same defects late in the project
+
+### Defects that are easier and cheaper to find through static testing:
+
+| Category | Examples |
+|---|---|
+| Requirements defects | Inconsistencies, ambiguities, contradictions, omissions, duplications |
+| Design defects | Inefficient database structures, poor modularization |
+| Coding defects | Undefined values, undeclared variables, unreachable/duplicated code, excessive complexity |
+| Standards deviations | Naming convention violations, coding standard violations |
+| Interface defects | Mismatched number, type, or order of parameters |
+| Security vulnerabilities | Buffer overflows |
+| Test basis gaps | Missing tests for an acceptance criterion |
+
+---
+
+## Static vs. Dynamic Testing — Side by Side
 
 | Aspect | Static Testing | Dynamic Testing |
 |---|---|---|
-| Code execution | Not required | Required |
-| How defects are found | Directly | Via failures, then root cause analysis |
-| Work products | Executable and non-executable | Executable only |
-| Rarely executed paths | Easier to detect | Harder to reach |
+| Needs execution? | No | Yes |
+| How defects are found | Directly | Via failures → root cause analysis |
+| Applicable to | Executable AND non-executable work products | Executable work products only |
+| Rare code paths | Easier to detect | Hard to reach |
 | Quality characteristics | Maintainability, readability | Performance, reliability |
 
-### Defects easier to find through static testing
-- Requirements defects (inconsistencies, ambiguities, contradictions, omissions, duplications)
-- Design defects (inefficient database structures, poor modularization)
-- Coding defects (undefined values, undeclared variables, unreachable/duplicated code, excessive complexity)
-- Deviations from standards (naming conventions, coding standards)
-- Incorrect interface specifications (mismatched number, type or order of parameters)
-- Security vulnerabilities (e.g., buffer overflows)
-- Gaps in test basis coverage (e.g., missing tests for an acceptance criterion)
+> Think of it this way: **static testing reads the recipe**, while **dynamic testing tastes the dish**.
 
 ---
 
 ## 3.2 Feedback and Review Process
 
-### 3.2.1 Benefits of Early and Frequent Stakeholder Feedback
+### Why Early and Frequent Stakeholder Feedback Matters
 
-Without regular stakeholder involvement, the product may not meet the stakeholder's vision, leading to costly rework, missed deadlines, and project failure.
+If stakeholders aren't involved regularly during development, the product may drift from their original vision. The consequences:
+- Costly rework
+- Missed deadlines
+- Blame games
+- Project failure
 
 Frequent feedback throughout the SDLC:
-- Prevents misunderstandings about requirements
-- Ensures changes to requirements are understood and implemented earlier
-- Helps the team focus on features that deliver the most value
-- Addresses identified risks proactively
+- Prevents misunderstandings about requirements early
+- Ensures changes are understood and implemented before they become expensive
+- Keeps the team focused on what delivers the most value
+- Addresses risks proactively
 
 ---
 
-### 3.2.2 Review Process Activities
+## The Review Process — 5 Activities
 
-Based on the ISO/IEC 20246 standard, the review process includes:
+Based on the **ISO/IEC 20246** standard:
 
-1. **Planning** — Define scope, purpose, work product, quality characteristics, exit criteria, effort, and timeframes
-2. **Review initiation** — Ensure all participants have access to the work product, understand their roles, and have everything needed
-3. **Individual review** — Each reviewer assesses the work product independently, identifying anomalies, recommendations, and questions using techniques (e.g., checklist-based, scenario-based)
-4. **Communication and analysis** — Anomalies are discussed and analyzed in a review meeting; decisions are made on status, ownership, and required actions
-5. **Fixing and reporting** — Defect reports are created; once exit criteria are met, the work product is accepted and results are reported
+| Step | What happens |
+|---|---|
+| **1. Planning** | Define scope, purpose, exit criteria, effort, and timeframes |
+| **2. Review initiation** | Ensure all participants have access, understand their role, and are prepared |
+| **3. Individual review** | Each reviewer independently assesses the work product; logs anomalies, recommendations, and questions |
+| **4. Communication and analysis** | Anomalies are discussed in a review meeting; decisions made on status, ownership, and follow-up actions |
+| **5. Fixing and reporting** | Defect reports are created; work product is accepted once exit criteria are met; results are reported |
 
 ---
 
-### 3.2.3 Roles and Responsibilities in Reviews
+## Roles in a Review — Who Does What?
 
 | Role | Responsibility |
 |---|---|
-| **Manager** | Decides what is reviewed; provides resources (staff, time) |
-| **Author** | Creates and fixes the work product under review |
-| **Moderator** (facilitator) | Ensures effective running of meetings; handles mediation, time management, and a safe environment |
-| **Scribe** (recorder) | Collates anomalies and records review information (decisions, new anomalies) |
-| **Reviewer** | Performs the review; may be a project member, SME, or any stakeholder |
-| **Review leader** | Takes overall responsibility; decides who, when, and where the review takes place |
+| **Manager** | Decides what gets reviewed; provides resources (people, time) |
+| **Author** | Creates and later fixes the work product under review |
+| **Moderator** (facilitator) | Runs the review meeting; handles mediation, time, and ensures a safe environment |
+| **Scribe** (recorder) | Records anomalies, decisions, and new findings during the meeting |
+| **Reviewer** | Performs the actual review; can be a team member, SME, or any stakeholder |
+| **Review leader** | Owns the review overall; decides who participates, when, and where |
+
+> **Memory tip:** Think of a review as a structured meeting with a **boss** (manager), a **creator** (author), a **referee** (moderator), a **note-taker** (scribe), **evaluators** (reviewers), and an **organizer** (review leader).
 
 ---
 
-### 3.2.4 Review Types
+## Review Types — From Least to Most Formal
 
-From least to most formal:
+| Type | Formality | Led by | Key characteristics |
+|---|---|---|---|
+| **Informal review** | Lowest | Anyone | No defined process; no formal output; just find anomalies |
+| **Walkthrough** | Low–Medium | **Author** | Author guides the team through the work product; educates, gains consensus, detects anomalies; individual review beforehand is optional |
+| **Technical review** | Medium–High | **Moderator** | Technically qualified reviewers; focus on consensus on technical problems and detecting anomalies |
+| **Inspection** | Highest | **Moderator** (NOT the author) | Follows the full defined process; maximum anomaly detection is the main goal; metrics are collected; **author cannot be review leader or scribe** |
 
-| Type | Key Characteristics |
+> **Key exam point:** In an inspection, the **author cannot act as review leader or scribe** — this is unique to this review type.
+
+---
+
+## Success Factors for Reviews
+
+A review succeeds when:
+
+- Objectives are **clear and measurable** — evaluation of participants is **never** an objective
+- The **right review type** is chosen for the work product and context
+- Reviews are done on **small chunks** so reviewers stay focused
+- **Feedback** is given to stakeholders and authors so they can improve
+- Participants have **adequate preparation time**
+- **Management supports** the review process
+- Reviews are part of the **organization's culture**
+- All participants receive **adequate training**
+- Meetings are **facilitated effectively**
+
+---
+
+## Key Terms Cheat Sheet
+
+| Term | Definition |
 |---|---|
-| **Informal review** | No defined process; no formal documented output; main objective is detecting anomalies |
-| **Walkthrough** | Led by the **author**; objectives include quality evaluation, educating reviewers, gaining consensus, generating ideas, detecting anomalies; individual review beforehand is not required |
-| **Technical review** | Performed by technically qualified reviewers; led by a **moderator**; objectives include gaining consensus on technical problems, detecting anomalies, evaluating quality |
-| **Inspection** | Most formal type; follows the complete generic process; main objective is maximum number of anomalies; **author cannot act as review leader or scribe**; metrics are collected |
-
----
-
-### 3.2.5 Success Factors for Reviews
-
-- Define clear objectives and measurable exit criteria (evaluation of participants should **never** be an objective)
-- Choose the appropriate review type for the work product and context
-- Perform reviews on small chunks to maintain concentration
-- Provide feedback to stakeholders and authors so they can improve
-- Provide adequate preparation time
-- Support from management
-- Make reviews part of the organization's culture
-- Provide adequate training to all participants
-- Facilitate meetings effectively
-
----
-
-## Key Terms
-- **Static testing**: Evaluating a work product without executing it
-- **Dynamic testing**: Testing by executing the software
-- **Static analysis**: Tool-assisted evaluation of a work product against a formal syntax
-- **Review**: A form of static testing in which a work product is evaluated by one or more people
-- **Inspection**: The most formal review type; follows a complete defined process; author cannot be review leader or scribe
-- **Technical review**: A review led by a moderator with technically qualified reviewers
-- **Walkthrough**: A review led by the author
-- **Informal review**: A review with no defined process or formal output
-- **Anomaly**: Any result that differs from what is expected; identified during a review
-- **Moderator** (facilitator): Ensures the effective running of a review meeting
+| **Static testing** | Evaluating a work product without executing it |
+| **Dynamic testing** | Testing by executing the software |
+| **Static analysis** | Tool-assisted evaluation against a formal syntax |
+| **Review** | Manual evaluation of a work product by one or more people |
+| **Inspection** | Most formal review type; follows a complete defined process; author cannot be leader or scribe |
+| **Technical review** | Review led by a moderator with technically qualified reviewers |
+| **Walkthrough** | Review led by the author |
+| **Informal review** | Review with no defined process or formal output |
+| **Anomaly** | Any result that differs from what is expected; identified during a review |
+| **Moderator** | Ensures the effective running of a review meeting |
 
 ---
 
 ## Practice Questions
+
+- What is static testing and how does it differ from dynamic testing?
 - What types of work products can be examined by static testing?
-- What is the difference between static testing and dynamic testing?
-- List three defect types that are easier to find through static testing than dynamic testing.
+- Name three defect types that are easier to find through static testing.
 - What are the five activities in the review process?
-- What are the six principal roles in a review and their responsibilities?
-- What is the most formal review type, and what are its key characteristics?
+- What are the six principal roles in a review? What does each one do?
+- What is the most formal review type and what makes it unique?
 - What is the main difference between a walkthrough and a technical review?
+- Why can't the author be the review leader or scribe in an inspection?
 - List four success factors for reviews.
 - Why should evaluation of participants never be an objective of a review?
