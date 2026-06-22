@@ -6,14 +6,14 @@ Personal study notes for the ISTQB Certified Tester Foundation Level v4.0 exam.
 
 ## Syllabus Chapters
 
-| Chapter | Topic | Notes | Mind Map |
-|---|---|---|---|
-| 01 | Fundamentals of Testing | [notes.md](./chapter-01-fundamentals/notes.md) | [mindmap.md](./chapter-01-fundamentals/mindmap.md) |
-| 02 | Testing Throughout the SDLC | [notes.md](./chapter-02-testing-throughout-sdlc/notes.md) | [mindmap.md](./chapter-02-testing-throughout-sdlc/mindmap.md) |
-| 03 | Static Testing | [notes.md](./chapter-03-static-testing/notes.md) | [mindmap.md](./chapter-03-static-testing/mindmap.md) |
-| 04 | Test Analysis and Design | [notes.md](./chapter-04-test-analysis-design/notes.md) | [mindmap.md](./chapter-04-test-analysis-design/mindmap.md) |
-| 05 | Managing Test Activities | [notes.md](./chapter-05-managing-test-activities/notes.md) | [mindmap.md](./chapter-05-managing-test-activities/mindmap.md) |
-| 06 | Test Tools | [notes.md](./chapter-06-test-tools/notes.md) | [mindmap.md](./chapter-06-test-tools/mindmap.md) |
+| Chapter | Topic | Notes |
+|---|---|---|
+| 01 | Fundamentals of Testing | [notes.md](./chapter-01-fundamentals/notes.md) |
+| 02 | Testing Throughout the SDLC | [notes.md](./chapter-02-testing-throughout-sdlc/notes.md) |
+| 03 | Static Testing | [notes.md](./chapter-03-static-testing/notes.md) |
+| 04 | Test Analysis and Design | [notes.md](./chapter-04-test-analysis-design/notes.md) |
+| 05 | Managing Test Activities | [notes.md](./chapter-05-managing-test-activities/notes.md) |
+| 06 | Test Tools | [notes.md](./chapter-06-test-tools/notes.md) |
 
 ---
 
