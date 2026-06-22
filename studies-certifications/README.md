@@ -8,7 +8,7 @@ Study notes, labs, and resources organized by certification path.
 
 | Certification | Folder | Status |
 |---|---|---|
-| ISTQB CTFL v4.0 | [ISTQB-CTFL/](./ISTQB-CTFL/) | In Progress |
+| ISTQB CTFL v4.0 | [ISTQB-CTFL/](./ISTQB-CTFL/) | Notes complete — studying |
 
 ---
 
@@ -17,7 +17,6 @@ Study notes, labs, and resources organized by certification path.
 1. Create a folder named after the certification (e.g., `CKAD/`, `AWS-SAA/`)
 2. Add a `README.md` with the exam objectives and study plan
 3. Organize notes by chapter, domain, or topic area
-4. Include a `practice-questions/` subfolder for mock exercises
 
 ---
 
@@ -26,8 +25,9 @@ Study notes, labs, and resources organized by certification path.
 ```
 studies-certifications/
 └── CERTIFICATION-NAME/
-    ├── README.md           # Exam overview and study plan
-    ├── chapter-XX-topic/   # Notes per chapter or domain
-    │   └── notes.md
-    └── practice-questions/ # Mock questions and answers
+    ├── README.md              # Exam overview, chapter list, exam info
+    ├── glossary.md            # All key terms, alphabetical, K-level tagged
+    ├── COMMON-MISTAKES.md     # Exam traps, confused concepts, tips
+    └── chapter-XX-topic/      # Notes per chapter or domain
+        └── notes.md
 ```

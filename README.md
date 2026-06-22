@@ -28,8 +28,26 @@ A structured space for continuous learning, hands-on practice, and professional 
 
 ```
 .
-├── studies-certifications/   # Certification study paths
-├── python-practice/          # Python exercises by topic
-├── professional-portfolio/   # Portfolio projects
-└── lab-experiments/          # Tools and experiments
+├── studies-certifications/
+│   └── ISTQB-CTFL/                   # ISTQB CTFL v4.0 — All 6 chapters complete
+│       ├── chapter-01-fundamentals/
+│       ├── chapter-02-testing-throughout-sdlc/
+│       ├── chapter-03-static-testing/
+│       ├── chapter-04-test-analysis-design/
+│       ├── chapter-05-managing-test-activities/
+│       ├── chapter-06-test-tools/
+│       ├── glossary.md               # ~90 terms, all chapters, K-level tagged
+│       ├── COMMON-MISTAKES.md        # Exam traps and confused concepts
+│       └── README.md
+├── python-practice/                  # Exercises by topic
+├── professional-portfolio/           # Portfolio projects
+└── lab-experiments/                  # Tools and experiments
 ```
+
+---
+
+## Certifications Progress
+
+| Certification | Topics | Status |
+|---|---|---|
+| ISTQB CTFL v4.0 | 6 chapters, glossary, common mistakes | Notes complete — studying |
