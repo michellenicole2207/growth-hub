@@ -5,7 +5,40 @@
 
 ---
 
-## What is Testing, really?
+## Cognitive Levels in This Chapter
+
+The ISTQB exam classifies every learning objective at one of three cognitive levels (based on Bloom's Taxonomy):
+
+| Level | Keyword | What the exam expects |
+|---|---|---|
+| **K1** | Remember | Recall or recognize a term, concept, or fact — no explanation needed |
+| **K2** | Understand | Explain, differentiate, compare, or give examples — go beyond simple recall |
+| **K3** | Apply | Use a technique on a concrete scenario to derive a result |
+
+### Learning Objectives for Chapter 1
+
+| LO | K | Topic |
+|---|---|---|
+| FL-1.1.1 | K1 | Identify typical objectives of testing |
+| FL-1.1.2 | K2 | Differentiate testing from debugging |
+| FL-1.2.1 | K2 | Exemplify why testing is necessary |
+| FL-1.2.2 | K1 | Recall the relationship between testing and quality assurance |
+| FL-1.2.3 | K2 | Distinguish between error, defect, failure, and root cause |
+| FL-1.3.1 | K2 | Explain the seven testing principles |
+| FL-1.4.1 | K2 | Summarize the different test activities and tasks |
+| FL-1.4.2 | K2 | Explain the impact of context on the test process |
+| FL-1.4.3 | K2 | Differentiate testware that supports test activities |
+| FL-1.4.4 | K2 | Explain the value of maintaining traceability between the test basis and testware |
+| FL-1.5.1 | K2 | Explain the role of human psychology in testing |
+| FL-1.5.2 | K1 | Identify the skills required for testing |
+| FL-1.5.3 | K2 | Distinguish the mindset required for testing from the mindset required for developing |
+
+> **Exam tip:** Chapter 1 is almost entirely K2 — focus on being able to *explain* and *distinguish*, not just name.
+> The only K1 items are FL-1.1.1, FL-1.2.2, and FL-1.5.2. No K3 in this chapter.
+
+---
+
+## What is Testing, really? — 💡 Understand (K2)
 
 Software testing is a set of activities to **discover defects** and **evaluate the quality** of software work products. But here's what many people get wrong:
 
@@ -13,7 +46,7 @@ Software testing is a set of activities to **discover defects** and **evaluate t
 - Testing is **not only** about running the software — it includes reviewing documents, designs, and requirements (static testing) too
 - Testing involves **both verification** ("are we building the product right?") and **validation** ("are we building the right product?")
 
-### Testing vs. Debugging — not the same thing!
+### Testing vs. Debugging — not the same thing! — 💡 Understand (K2)
 | Activity | Who does it | What it does |
 |---|---|---|
 | **Testing** | Testers | Finds failures and defects |
@@ -23,11 +56,11 @@ Testing triggers the failure → debugging finds and fixes the root cause.
 
 ---
 
-## Why is Testing Necessary?
+## Why is Testing Necessary? — 💡 Understand (K2)
 
 Software defects happen because humans make mistakes. Those mistakes create defects, and defects — when executed — cause failures. And failures can cost money, reputation, or even lives.
 
-### The error → defect → failure chain
+### The error → defect → failure chain — 💡 Understand (K2)
 - **Error**: A human mistake (e.g., a developer misunderstands a requirement)
 - **Defect**: The flaw that the error introduces into the code or document
 - **Failure**: What happens when that defect is executed and the system behaves incorrectly
@@ -35,7 +68,7 @@ Software defects happen because humans make mistakes. Those mistakes create defe
 
 > Not all defects cause failures — some only fail under specific conditions, and some may never cause a failure at all.
 
-### Testing vs. Quality Assurance (QA) — also not the same!
+### Testing vs. Quality Assurance (QA) — also not the same! — 🧠 Remember (K1)
 - **Testing** is **product-oriented** and **corrective** — it finds defects in what was built
 - **QA** is **process-oriented** and **preventive** — it improves the process to prevent defects from happening
 
@@ -43,7 +76,7 @@ Think of QA as setting up a good kitchen process, and testing as tasting the dis
 
 ---
 
-## The 7 Testing Principles
+## The 7 Testing Principles — 💡 Understand (K2)
 
 These are the foundation of everything in ISTQB. Know them cold.
 
@@ -59,7 +92,7 @@ These are the foundation of everything in ISTQB. Know them cold.
 
 ---
 
-## Test Activities & Tasks
+## Test Activities & Tasks — 💡 Understand (K2)
 
 A test process is made up of these activities — they often happen iteratively, not strictly in sequence:
 
@@ -71,7 +104,7 @@ A test process is made up of these activities — they often happen iteratively,
 6. **Test execution** — Run the tests, log results, report anomalies
 7. **Test completion** — Wrap up: archive testware, write completion report, capture lessons learned
 
-### Testware — what each activity produces
+### Testware — what each activity produces — 💡 Understand (K2)
 | Activity | Output examples |
 |---|---|
 | Planning | Test plan, risk register |
@@ -82,7 +115,7 @@ A test process is made up of these activities — they often happen iteratively,
 | Execution | Test logs, defect reports |
 | Completion | Test completion report, lessons learned |
 
-### Traceability
+### Traceability — 💡 Understand (K2)
 Good traceability links test cases back to requirements and risks. This helps:
 - Measure coverage
 - Analyze the impact of changes
@@ -90,7 +123,7 @@ Good traceability links test cases back to requirements and risks. This helps:
 
 ---
 
-## Roles in Testing
+## Roles in Testing — 💡 Understand (K2)
 
 Two principal roles exist:
 
@@ -101,7 +134,7 @@ One person can hold both roles at the same time, depending on the project contex
 
 ---
 
-## Essential Skills for Testers
+## Essential Skills for Testers — 💡 Understand (K2)
 
 Good testers need a mix of:
 - **Testing knowledge** — knowing how to apply techniques effectively
@@ -110,12 +143,12 @@ Good testers need a mix of:
 - **Domain knowledge** — understanding the business context
 - **Technical knowledge** — using tools efficiently
 
-### Whole Team Approach
+### Whole Team Approach — 💡 Understand (K2)
 Everyone on the team is responsible for quality — not just testers. Testers collaborate closely with developers and business representatives. This comes from Extreme Programming (XP).
 
 > Exception: in safety-critical systems, a higher level of test independence may be needed.
 
-### Independence of Testing
+### Independence of Testing — 💡 Understand (K2)
 Independent testers find different defects than the author because they have different cognitive biases. Levels of independence:
 1. Author tests their own work (no independence)
 2. Peers from the same team
@@ -127,7 +160,7 @@ Independent testers find different defects than the author because they have dif
 
 ---
 
-## Key Terms Cheat Sheet
+## Key Terms Cheat Sheet — 🧠 Remember (K1)
 
 | Term | Definition |
 |---|---|

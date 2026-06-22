@@ -6,7 +6,36 @@
 
 ---
 
-## 4.1 The Three Categories of Test Techniques
+## Cognitive Levels in This Chapter
+
+> K1 = Remember · K2 = Understand · K3 = Apply — see Chapter 1 for the full legend.
+
+### Learning Objectives for Chapter 4
+
+| LO | K | Topic |
+|---|---|---|
+| FL-4.1.1 | K2 | Summarize the categories of test techniques and their subcategories |
+| FL-4.2.1 | **K3** | Apply equivalence partitioning to derive test cases for a given scenario |
+| FL-4.2.2 | **K3** | Apply boundary value analysis to derive test cases for a given scenario |
+| FL-4.2.3 | **K3** | Apply decision table testing to derive test cases for a given scenario |
+| FL-4.2.4 | **K3** | Apply state transition testing to derive test cases for a given scenario |
+| FL-4.3.1 | K2 | Explain statement testing |
+| FL-4.3.2 | K2 | Explain branch testing |
+| FL-4.3.3 | K2 | Explain the value of white-box testing |
+| FL-4.4.1 | K2 | Explain error guessing |
+| FL-4.4.2 | K2 | Explain exploratory testing |
+| FL-4.4.3 | K2 | Explain checklist-based testing |
+| FL-4.5.1 | K2 | Recall the factors that make a user story good |
+| FL-4.5.2 | K2 | Recall the typical formats for writing acceptance criteria |
+| FL-4.5.3 | K2 | Summarize the activities of the ATDD approach |
+
+> **Exam tip:** The four black-box techniques (FL-4.2.1–4.2.4) are **K3** — the exam will give you a scenario
+> and ask you to produce test cases. Practice deriving them, not just explaining them.
+> White-box techniques (FL-4.3.1–4.3.2) are only K2 — you explain statement and branch coverage, not calculate it.
+
+---
+
+## 4.1 The Three Categories of Test Techniques — 💡 Understand (K2)
 
 Think of test techniques as three different lenses for looking at a system:
 
@@ -20,9 +49,9 @@ Think of test techniques as three different lenses for looking at a system:
 
 ---
 
-## 4.2 Black-Box Test Techniques
+## 4.2 Black-Box Test Techniques — ⚙️ Apply (K3)
 
-### 4.2.1 Equivalence Partitioning (EP)
+### 4.2.1 Equivalence Partitioning (EP) — ⚙️ Apply (K3)
 
 **The idea:** If the system treats all values in a group the same way, you only need to test one value from that group.
 
@@ -39,7 +68,7 @@ Think of test techniques as three different lenses for looking at a system:
 
 ---
 
-### 4.2.2 Boundary Value Analysis (BVA)
+### 4.2.2 Boundary Value Analysis (BVA) — ⚙️ Apply (K3)
 
 **The idea:** Developers make the most mistakes at the edges of a range — so test there.
 
@@ -59,7 +88,7 @@ Think of test techniques as three different lenses for looking at a system:
 
 ---
 
-### 4.2.3 Decision Table Testing
+### 4.2.3 Decision Table Testing — ⚙️ Apply (K3)
 
 **The idea:** When the system behaves differently depending on combinations of conditions, a table maps every combination to its expected outcome.
 
@@ -79,7 +108,7 @@ Coverage = feasible columns exercised ÷ total feasible columns.
 
 ---
 
-### 4.2.4 State Transition Testing
+### 4.2.4 State Transition Testing — ⚙️ Apply (K3)
 
 **The idea:** Some systems behave differently depending on their current state. This technique tests those state-dependent behaviors.
 
@@ -103,9 +132,9 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 ---
 
-## 4.3 White-Box Test Techniques
+## 4.3 White-Box Test Techniques — 💡 Understand (K2)
 
-### 4.3.1 Statement Testing
+### 4.3.1 Statement Testing — 💡 Understand (K2)
 
 - **Coverage items:** executable statements
 - Aim: design test cases to execute statements until an acceptable coverage level is reached
@@ -116,7 +145,7 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 ---
 
-### 4.3.2 Branch Testing
+### 4.3.2 Branch Testing — 💡 Understand (K2)
 
 - **Coverage items:** branches — transfers of control between nodes in a control flow graph
 - Branches can be **unconditional** (straight-line code) or **conditional** (if/else, switch, loop decisions)
@@ -131,7 +160,7 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 ---
 
-### 4.3.3 The Value of White-Box Testing
+### 4.3.3 The Value of White-Box Testing — 💡 Understand (K2)
 
 **Strength:** Takes the entire implementation into account — can find defects even when the spec is vague, outdated, or incomplete.
 
@@ -143,9 +172,9 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 ---
 
-## 4.4 Experience-Based Test Techniques
+## 4.4 Experience-Based Test Techniques — 💡 Understand (K2)
 
-### 4.4.1 Error Guessing
+### 4.4.1 Error Guessing — 💡 Understand (K2)
 
 **The idea:** Use what you know about how software breaks to anticipate where it will break.
 
@@ -158,7 +187,7 @@ Based on the tester's knowledge of:
 
 ---
 
-### 4.4.2 Exploratory Testing
+### 4.4.2 Exploratory Testing — 💡 Understand (K2)
 
 **The idea:** Design, execute, and evaluate tests simultaneously while learning about the system.
 
@@ -175,7 +204,7 @@ Based on the tester's knowledge of:
 
 ---
 
-### 4.4.3 Checklist-Based Testing
+### 4.4.3 Checklist-Based Testing — 💡 Understand (K2)
 
 **The idea:** Use a prepared checklist of test conditions to guide testing — especially when detailed test cases don't exist.
 
@@ -192,11 +221,11 @@ Based on the tester's knowledge of:
 
 ---
 
-## 4.5 Collaboration-Based Test Approaches
+## 4.5 Collaboration-Based Test Approaches — 💡 Understand (K2)
 
 Unlike the other techniques (which focus on *finding* defects), collaboration-based approaches focus on **avoiding defects through shared understanding**.
 
-### 4.5.1 Collaborative User Story Writing
+### 4.5.1 Collaborative User Story Writing — 💡 Understand (K2)
 
 A **user story** represents a feature valuable to a user or purchaser. Every user story has **3 Cs** (Jeffries 2000):
 
@@ -220,7 +249,7 @@ A **user story** represents a feature valuable to a user or purchaser. Every use
 
 ---
 
-### 4.5.2 Acceptance Criteria
+### 4.5.2 Acceptance Criteria — 💡 Understand (K2)
 
 Acceptance criteria are the **conditions a user story must meet to be accepted** by stakeholders. They are essentially the test conditions for acceptance testing.
 
@@ -240,7 +269,7 @@ Acceptance criteria are the **conditions a user story must meet to be accepted**
 
 ---
 
-### 4.5.3 Acceptance Test-Driven Development (ATDD)
+### 4.5.3 Acceptance Test-Driven Development (ATDD) — 💡 Understand (K2)
 
 **The idea:** Write test cases *before* implementing the user story, using the acceptance criteria as the guide.
 
@@ -257,7 +286,7 @@ Test cases must be expressed in language **understandable by stakeholders** (nat
 
 ---
 
-## Key Terms Cheat Sheet
+## Key Terms Cheat Sheet — 🧠 Remember (K1)
 
 | Term | Definition |
 |---|---|

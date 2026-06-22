@@ -6,7 +6,27 @@
 
 ---
 
-## 3.1 Static Testing Basics
+## Cognitive Levels in This Chapter
+
+> K1 = Remember · K2 = Understand · K3 = Apply — see Chapter 1 for the full legend.
+
+### Learning Objectives for Chapter 3
+
+| LO | K | Topic |
+|---|---|---|
+| FL-3.1.1 | K1 | Recall work products that can be examined by static testing |
+| FL-3.1.2 | K2 | Explain the value of static testing |
+| FL-3.1.3 | K2 | Compare static testing and dynamic testing |
+| FL-3.2.1 | K1 | Recall the activities, roles, and responsibilities of a formal review |
+| FL-3.2.2 | K2 | Explain how the different review types differ from one another |
+| FL-3.2.3 | K1 | Recall the factors for a successful review |
+
+> **Exam tip:** No K3 in this chapter. Three K1 items (FL-3.1.1, FL-3.2.1, FL-3.2.3) — pure recall.
+> FL-3.1.3 and FL-3.2.2 require you to *compare* and *explain differences* — classic K2.
+
+---
+
+## 3.1 Static Testing Basics — 💡 Understand (K2)
 
 Static testing means evaluating a work product **without executing it**. It can be done:
 - **Manually** — through reviews (walkthroughs, inspections, etc.)
@@ -16,7 +36,7 @@ It applies to both **verification** and **validation**, and its objectives inclu
 
 ---
 
-## What Can Be Examined with Static Testing?
+## What Can Be Examined with Static Testing? — 🧠 Remember (K1)
 
 Almost **any work product** — as long as it can be read and understood:
 
@@ -32,7 +52,7 @@ Almost **any work product** — as long as it can be read and understood:
 
 ---
 
-## Why Bother? The Value of Static Testing
+## Why Bother? The Value of Static Testing — 💡 Understand (K2)
 
 Static testing is powerful because:
 
@@ -41,7 +61,7 @@ Static testing is powerful because:
 3. **It builds shared understanding** — reviewing requirements together aligns the team early
 4. **It's cost-effective** — the upfront cost of reviews is far lower than the cost of finding those same defects late in the project
 
-### Defects that are easier and cheaper to find through static testing:
+### Defects that are easier and cheaper to find through static testing — 💡 Understand (K2)
 
 | Category | Examples |
 |---|---|
@@ -55,7 +75,7 @@ Static testing is powerful because:
 
 ---
 
-## Static vs. Dynamic Testing — Side by Side
+## Static vs. Dynamic Testing — Side by Side — 💡 Understand (K2)
 
 | Aspect | Static Testing | Dynamic Testing |
 |---|---|---|
@@ -69,9 +89,9 @@ Static testing is powerful because:
 
 ---
 
-## 3.2 Feedback and Review Process
+## 3.2 Feedback and Review Process — 💡 Understand (K2)
 
-### Why Early and Frequent Stakeholder Feedback Matters
+### Why Early and Frequent Stakeholder Feedback Matters — 💡 Understand (K2)
 
 If stakeholders aren't involved regularly during development, the product may drift from their original vision. The consequences:
 - Costly rework
@@ -87,7 +107,7 @@ Frequent feedback throughout the SDLC:
 
 ---
 
-## The Review Process — 5 Activities
+## The Review Process — 5 Activities — 🧠 Remember (K1)
 
 Based on the **ISO/IEC 20246** standard:
 
@@ -101,7 +121,7 @@ Based on the **ISO/IEC 20246** standard:
 
 ---
 
-## Roles in a Review — Who Does What?
+## Roles in a Review — Who Does What? — 🧠 Remember (K1)
 
 | Role | Responsibility |
 |---|---|
@@ -116,7 +136,7 @@ Based on the **ISO/IEC 20246** standard:
 
 ---
 
-## Review Types — From Least to Most Formal
+## Review Types — From Least to Most Formal — 💡 Understand (K2)
 
 | Type | Formality | Led by | Key characteristics |
 |---|---|---|---|
@@ -129,7 +149,7 @@ Based on the **ISO/IEC 20246** standard:
 
 ---
 
-## Success Factors for Reviews
+## Success Factors for Reviews — 🧠 Remember (K1)
 
 A review succeeds when:
 
@@ -145,7 +165,7 @@ A review succeeds when:
 
 ---
 
-## Key Terms Cheat Sheet
+## Key Terms Cheat Sheet — 🧠 Remember (K1)
 
 | Term | Definition |
 |---|---|

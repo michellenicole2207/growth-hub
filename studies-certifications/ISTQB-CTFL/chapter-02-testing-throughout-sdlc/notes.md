@@ -5,11 +5,36 @@
 
 ---
 
-## 2.1 Testing in the Context of an SDLC
+## Cognitive Levels in This Chapter
+
+> K1 = Remember · K2 = Understand · K3 = Apply — see Chapter 1 for the full legend.
+
+### Learning Objectives for Chapter 2
+
+| LO | K | Topic |
+|---|---|---|
+| FL-2.1.1 | K2 | Explain the impact of the chosen SDLC model on testing |
+| FL-2.1.2 | K1 | Recall good testing practices that apply to any SDLC model |
+| FL-2.1.3 | K1 | Recall examples of TDD, ATDD, and BDD |
+| FL-2.1.4 | K2 | Summarize the DevOps benefits for testing |
+| FL-2.1.5 | K2 | Explain the shift-left approach |
+| FL-2.1.6 | K2 | Explain how retrospectives can be used for process improvement in testing |
+| FL-2.2.1 | K2 | Distinguish the different test levels |
+| FL-2.2.2 | K2 | Distinguish the different test types |
+| FL-2.2.3 | K2 | Distinguish confirmation testing from regression testing |
+| FL-2.3.1 | K2 | Summarize the triggers for maintenance testing |
+| FL-2.3.2 | K2 | Explain the role of impact analysis for maintenance testing |
+
+> **Exam tip:** No K3 in this chapter. K1 items are FL-2.1.2 and FL-2.1.3 — just recall, no explanation needed.
+> Everything else requires you to *explain* or *distinguish*.
+
+---
+
+## 2.1 Testing in the Context of an SDLC — 💡 Understand (K2)
 
 An SDLC model defines how development phases and activities relate to each other. The choice of model directly impacts **how** testing is done — not whether testing is done.
 
-### The three main SDLC model categories
+### The three main SDLC model categories — 💡 Understand (K2)
 
 | Model | Examples | How testing fits |
 |---|---|---|
@@ -20,14 +45,14 @@ An SDLC model defines how development phases and activities relate to each other
 > In practice, many real projects combine models — e.g., Agile uses both iterative and incremental approaches.
 > Agile practices like Scrum, Kanban, TDD, BDD, and XP are methods that operate *within* these model types.
 
-### The SDLC impacts testing in 5 ways:
+### The SDLC impacts testing in 5 ways — 💡 Understand (K2)
 1. Scope and timing of test activities (when and what gets tested)
 2. Level of detail of test documentation
 3. Choice of test techniques and approach
 4. Extent of test automation
 5. Roles and responsibilities of testers
 
-### Good testing practices — apply to ANY SDLC model
+### Good testing practices — apply to ANY SDLC model — 🧠 Remember (K1)
 - Every development activity has a corresponding test activity
 - Different test levels have specific and different test objectives
 - Test analysis and design begin during the corresponding development phase
@@ -35,7 +60,7 @@ An SDLC model defines how development phases and activities relate to each other
 
 ---
 
-## Testing as a Driver: TDD, ATDD, and BDD
+## Testing as a Driver: TDD, ATDD, and BDD — 🧠 Remember (K1)
 
 These approaches flip the traditional order — **tests are written before the code**.
 
@@ -49,7 +74,7 @@ All three implement the **early testing principle** and support **shift left**.
 
 ---
 
-## DevOps and Testing
+## DevOps and Testing — 💡 Understand (K2)
 
 DevOps bridges development, testing, and operations to deliver high-quality software faster.
 
@@ -68,7 +93,7 @@ DevOps bridges development, testing, and operations to deliver high-quality soft
 
 ---
 
-## Shift Left
+## Shift Left — 💡 Understand (K2)
 
 Shift left means **testing earlier in the SDLC** — not waiting until the code is complete.
 
@@ -83,7 +108,7 @@ Good practices to achieve shift left:
 
 ---
 
-## Retrospectives and Process Improvement
+## Retrospectives and Process Improvement — 💡 Understand (K2)
 
 Retrospectives are held at the end of an iteration, project, or release milestone. Participants (not only testers — also developers, architects, product owners, business analysts) discuss:
 - What went well and should be retained?
@@ -98,9 +123,9 @@ Retrospectives are held at the end of an iteration, project, or release mileston
 
 ---
 
-## 2.2 Test Levels and Test Types
+## 2.2 Test Levels and Test Types — 💡 Understand (K2)
 
-### Test Levels — the five levels
+### Test Levels — the five levels — 💡 Understand (K2)
 
 Each level has a different focus, test basis, and set of objectives.
 
@@ -112,14 +137,14 @@ Each level has a different focus, test basis, and set of objectives.
 | **System integration testing** | Interfaces between the system and external systems/services | Testers |
 | **Acceptance testing** | Validation; demonstrating readiness for deployment | Business / End users |
 
-### Acceptance Testing Types
+### Acceptance Testing Types — 💡 Understand (K2)
 - **UAT** (User Acceptance Testing): Real users validate the system meets their needs
 - **OAT** (Operational Acceptance Testing): Operational readiness — backup, recovery, security
 - **Contractual/Regulatory**: Verifies compliance with contracts or regulations
 - **Alpha testing**: Internal users test at the developer's site
 - **Beta testing**: External users test in their own environment
 
-### Test Types — what aspect is being tested
+### Test Types — what aspect is being tested — 💡 Understand (K2)
 
 | Type | What it checks |
 |---|---|
@@ -130,7 +155,7 @@ Each level has a different focus, test basis, and set of objectives.
 
 > All four test types can be applied at **any** test level.
 
-### Change-Related Testing
+### Change-Related Testing — 💡 Understand (K2)
 - **Confirmation testing**: Verifies that a specific defect has been fixed
 - **Regression testing**: Ensures that changes haven't broken existing functionality
 
@@ -138,28 +163,28 @@ Each level has a different focus, test basis, and set of objectives.
 
 ---
 
-## 2.3 Maintenance Testing
+## 2.3 Maintenance Testing — 💡 Understand (K2)
 
 Maintenance testing is triggered when a system that's already in production needs to change.
 
-### Triggers (v4 categories)
+### Triggers (v4 categories) — 💡 Understand (K2)
 | Trigger | Examples |
 |---|---|
 | **Modifications** | Planned enhancements, corrective changes (bug fixes), hot fixes |
 | **Upgrades or migrations** | Moving to a new platform, OS, or environment |
 | **Retirement** | End of life — data archiving and retrieval testing |
 
-### Scope depends on:
+### Scope depends on — 💡 Understand (K2)
 - Degree of risk of the change
 - Size of the existing system
 - Size of the change
 
-### Impact Analysis
+### Impact Analysis — 💡 Understand (K2)
 Before testing, **impact analysis** determines which parts of the system could be affected by the change. This helps define the scope of regression testing and relies on good traceability.
 
 ---
 
-## Key Terms Cheat Sheet
+## Key Terms Cheat Sheet — 🧠 Remember (K1)
 
 | Term | Definition |
 |---|---|
