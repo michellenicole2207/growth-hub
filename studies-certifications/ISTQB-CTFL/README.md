@@ -33,6 +33,14 @@ Typical exam traps, easily confused concept pairs, and tips to avoid falling for
 
 ---
 
+## Study Guide PDF
+
+All chapters, glossary, and common mistakes compiled into a single printable PDF.
+
+→ [ISTQB-CTFL-study-guide.pdf](./ISTQB-CTFL-study-guide.pdf)
+
+---
+
 ## Notes Convention
 
 Each chapter `notes.md` includes:
