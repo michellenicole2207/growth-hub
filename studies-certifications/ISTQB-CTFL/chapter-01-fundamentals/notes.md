@@ -30,8 +30,8 @@ The ISTQB exam classifies every learning objective at one of three cognitive lev
 | FL-1.4.3 | K2 | Differentiate testware that supports test activities |
 | FL-1.4.4 | K2 | Explain the value of maintaining traceability between the test basis and testware |
 | FL-1.5.1 | K2 | Explain the role of human psychology in testing |
-| FL-1.5.2 | K1 | Identify the skills required for testing |
-| FL-1.5.3 | K2 | Distinguish the mindset required for testing from the mindset required for developing |
+| FL-1.5.2 | K1 | Recall the advantages of the whole team approach |
+| FL-1.5.3 | K2 | Distinguish the benefits and drawbacks of independence of testing |
 
 > **Exam tip:** Chapter 1 is almost entirely K2 — focus on being able to *explain* and *distinguish*, not just name.
 > The only K1 items are FL-1.1.1, FL-1.2.2, and FL-1.5.2. No K3 in this chapter.
@@ -40,15 +40,17 @@ The ISTQB exam classifies every learning objective at one of three cognitive lev
 
 ## What is Testing, really? — 💡 Understand (K2)
 
-Software testing is a set of activities to **discover defects**, **evaluate quality**, and **provide information** so stakeholders can make informed decisions. Testing has seven official objectives (FL-1.1.1 — K1, know them all):
+Software testing is a set of activities to **discover defects**, **evaluate quality**, and **provide information** so stakeholders can make informed decisions. Testing has nine official objectives (FL-1.1.1 — K1, know them all):
 
 1. Evaluate work products — requirements, user stories, designs, code
 2. Trigger failures and find defects
 3. Ensure required coverage of the test object
 4. Reduce the risk of inadequate software quality
 5. Verify that specified requirements have been fulfilled
-6. Verify compliance with contractual and legal requirements
+6. Verifying that a test object complies with contractual, legal, and regulatory requirements
 7. Provide information to stakeholders to allow informed decisions
+8. Building confidence in the quality of the test object
+9. Validating whether the test object is complete and works as expected by the stakeholders
 
 But here's what many people get wrong about testing:
 
@@ -64,11 +66,23 @@ But here's what many people get wrong about testing:
 
 Testing triggers the failure → debugging finds and fixes the root cause.
 
+> **Debugging process (3 steps):** (1) Reproduction of the failure, (2) Diagnosis — finding the root cause, (3) Fixing the defect. After fixing: **confirmation testing** checks the fix resolved the failure; **regression testing** checks nothing else broke. Static testing nuance: static testing directly finds defects without needing to execute code — no failure reproduction step needed.
+
 ---
 
 ## Why is Testing Necessary? — 💡 Understand (K2)
 
 Software defects happen because humans make mistakes. Those mistakes create defects, and defects — when executed — cause failures. And failures can cost money, reputation, or even lives.
+
+### 1.2.1 Testing's Contributions to Success — 💡 Understand (K2)
+
+Testing contributes to the success of projects in three distinct ways:
+
+1. **Cost-effective defect detection** — Testing is an effective means of detecting defects. Removing defects (debugging) is a non-testing activity; testing provides the evidence that triggers it.
+2. **Quality evaluation at SDLC phases** — Testing directly evaluates the quality of the test object at various points in the SDLC and contributes to stakeholder decisions about whether to release.
+3. **Indirect representation of users** — Testers represent users' needs throughout the project. They ensure user needs are considered and that the system will work as users expect.
+
+---
 
 ### The error → defect → failure chain — 💡 Understand (K2)
 - **Error**: A human mistake (e.g., a developer misunderstands a requirement)
@@ -114,16 +128,37 @@ A test process is made up of these activities — they often happen iteratively,
 6. **Test execution** — Run the tests, log results, report anomalies
 7. **Test completion** — Wrap up: archive testware, write completion report, capture lessons learned
 
+### 1.4.2 Test Process in Context — 💡 Understand (K2)
+
+Testing does not happen in isolation. The way testing is carried out depends on contextual factors that influence: test strategy, techniques used, degree of automation, required coverage level, testware detail, and test reporting.
+
+**Key contextual factors:**
+
+| Factor | What it includes |
+|---|---|
+| **Stakeholders** | Needs, expectations, requirements, willingness to cooperate |
+| **Team members** | Skills, knowledge, availability, experience |
+| **Business domain** | Criticality, risk tolerance, market, legal/regulatory requirements |
+| **Technical factors** | Technology type, system architecture, tool support |
+| **Project constraints** | Scope, time, budget, resources |
+| **Organizational factors** | Organizational structure, existing policies, culture |
+| **Software development lifecycle** | Sequential, iterative, Agile, DevOps model being used |
+| **Tools** | Availability, usability, licensing, compliance |
+
+> **Exam tip (K2):** An exam question may describe a project scenario and ask how a specific contextual factor should influence the test approach. Know each factor and what it affects.
+
+---
+
 ### Testware — what each activity produces — 💡 Understand (K2)
 | Activity | Output examples |
 |---|---|
-| Planning | Test plan, risk register |
+| Planning | Test plan, test schedule, entry criteria, exit criteria, risk register |
 | Monitoring & control | Progress reports |
-| Analysis | Test conditions, defect reports |
-| Design | Test cases, test charters, test data requirements |
-| Implementation | Test scripts, test suites, test execution schedule |
+| Analysis | Test conditions, defect reports (regarding defects in the test basis) |
+| Design | Test cases, coverage items, test environment requirements |
+| Implementation | Test procedures, test scripts/suites, test data, test execution schedule |
 | Execution | Test logs, defect reports |
-| Completion | Test completion report, lessons learned |
+| Completion | Test completion report, action items for improvement, change requests, documented lessons learned |
 
 ### Traceability — 💡 Understand (K2)
 Good traceability links test cases back to requirements and risks. This helps:
@@ -144,14 +179,14 @@ One person can hold both roles at the same time, depending on the project contex
 
 ---
 
-## Essential Skills for Testers — 🧠 Remember (K1)
+## Essential Skills for Testers — 💡 Understand (K2)
 
 Good testers need a mix of:
-- **Testing knowledge** — knowing how to apply techniques effectively
-- **Analytical and critical thinking** — to find what others miss
-- **Good communication** — testers often deliver bad news; doing it constructively matters
-- **Domain knowledge** — understanding the business context
-- **Technical knowledge** — using tools efficiently
+- **Testing knowledge** — test techniques, defect management, risk-based approaches, and how to apply them effectively
+- **Thoroughness, carefulness, curiosity, attention to detail, being methodical** — qualities that enable precise and complete test coverage
+- **Good communication skills, active listening, being a team player** — testers often deliver bad news; doing it constructively and collaboratively matters
+- **Analytical thinking, critical thinking, creativity** — to find what others miss and design tests that explore edge cases
+- **Technical knowledge** — using relevant tools, technologies, and platforms efficiently
 
 ### Whole Team Approach — 💡 Understand (K2)
 Everyone on the team is responsible for quality — not just testers. Testers collaborate closely with developers and business representatives. This comes from Extreme Programming (XP).

@@ -27,7 +27,7 @@
 | FL-4.4.3 | K2 | Explain checklist-based testing |
 | FL-4.5.1 | K2 | Explain the factors that make a good user story (INVEST criteria) |
 | FL-4.5.2 | K2 | Recall the typical formats for writing acceptance criteria |
-| FL-4.5.3 | K2 | Summarize the activities of the ATDD approach |
+| FL-4.5.3 | **K3** | Use ATDD to derive test cases |
 
 > **Exam tip:** The four black-box techniques (FL-4.2.1–4.2.4) are **K3** — the exam will give you a scenario
 > and ask you to produce test cases. Practice deriving them, not just explaining them.
@@ -63,6 +63,8 @@ Think of test techniques as three different lenses for looking at a system:
 - Coverage = partitions exercised ÷ total partitions
 
 **When multiple inputs exist:** Use **Each Choice coverage** — at least one value from each partition set appears in at least one test case.
+
+> **Partition types:** Partitions may be continuous or discrete, ordered or unordered, finite or infinite. Sources of partitions include not only input parameters but also: configuration items, internal values, time-related values, and interface parameters. Partitions must be non-empty and non-overlapping.
 
 > **Example:** A field accepts ages 18–65. Partitions: under 18 (invalid), 18–65 (valid), over 65 (invalid). You need at least 3 test cases — one per partition.
 
@@ -107,6 +109,8 @@ Coverage = feasible columns exercised ÷ total feasible columns.
 
 **Strength:** Reveals gaps and contradictions in requirements; systematic — nothing gets overlooked.
 **Weakness:** With many conditions, the number of rules grows exponentially (2ⁿ). Use a minimized table or risk-based approach to reduce scope.
+
+> **Extended-entry decision tables:** The examples above show limited-entry tables (conditions are boolean: true/false). Extended-entry tables allow conditions to take multiple values (ranges, partitions, or discrete values) and actions to specify exact output values. They are more compact but harder to read.
 
 ---
 
@@ -168,7 +172,7 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 **Weakness:** If the software is missing a required feature entirely (defect of omission), white-box testing won't detect it — it only tests what's there.
 
-**Also useful in static analysis:** White-box *analysis* (a form of static testing) can be applied to pseudocode or unexecutable code to review structure without running it. White-box *testing* (dynamic) requires executable code — don't confuse the two.
+White-box test techniques can be used in both **static testing** (analyzing code, pseudocode, or other structural representations without executing them) and **dynamic testing** (executing the code). The techniques are the same; what differs is whether the code is being run.
 
 > Black-box testing alone gives you no measure of actual code coverage. White-box testing provides that objective measurement.
 
@@ -214,7 +218,7 @@ Based on the tester's knowledge of:
 - Built from experience, user knowledge, and understanding of how software fails
 - Should be **regularly updated** based on defect analysis — checklists can wear out just like tests
 
-**Do NOT include in checklists** *(industry guidance — not explicitly listed in the CTFL 4.0 syllabus):*
+**Do NOT include in checklists:**
 - Items that can be checked automatically
 - Items better suited as entry/exit criteria
 - Items that are too general
@@ -247,6 +251,8 @@ A **user story** represents a feature valuable to a user or purchaser. Every use
 - **S**mall
 - **T**estable
 
+> **Collaboration techniques:** User stories are created collaboratively using techniques such as **brainstorming** and **mind mapping**. The collaboration brings together three perspectives: **business** (what value is needed), **development** (what is technically feasible), and **testing** (what could go wrong and what needs to be verified).
+
 > If a stakeholder can't imagine how to test a user story, it's a signal the story is unclear or not valuable enough.
 
 ---
@@ -271,7 +277,7 @@ Acceptance criteria are the **conditions a user story must meet to be accepted**
 
 ---
 
-### 4.5.3 Acceptance Test-Driven Development (ATDD) — 💡 Understand (K2)
+### 4.5.3 Acceptance Test-Driven Development (ATDD) — ⚙️ Apply (K3)
 
 **The idea:** Write test cases *before* implementing the user story, using the acceptance criteria as the guide.
 
@@ -283,6 +289,8 @@ Acceptance criteria are the **conditions a user story must meet to be accepted**
 **Order of test cases:** positive (happy path) → negative → non-functional quality characteristics (e.g., performance, usability)
 
 Test cases must be expressed in language **understandable by stakeholders** (natural language: preconditions, inputs, postconditions).
+
+> **Test case scoping rule:** ATDD test cases must cover all characteristics of the user story and should not go beyond the story. No two test cases should describe the same characteristics.
 
 > When captured in an automation framework format, acceptance tests become **executable requirements**.
 

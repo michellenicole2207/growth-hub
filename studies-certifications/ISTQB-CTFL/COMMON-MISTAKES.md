@@ -75,12 +75,13 @@ The same terms appear in two different chapters with related but distinct meanin
 
 | | Walkthrough | Technical Review | Inspection |
 |---|---|---|---|
-| **Led by** | Author | Moderator or peer leader | Moderator (NOT author) |
+| **Led by** | Author | Moderator | Moderator (NOT author) |
 | **Formality** | Low–Medium | Medium–High | Highest |
-| **Scribe** | Mandatory | Depends | Mandatory |
+| **Scribe** | Not required | Depends | Mandatory |
 | **Author as leader?** | Yes | No | **Never** |
 
-> **Trap:** "In a walkthrough, individual review beforehand is mandatory." — FALSE. It is *optional*.
+> **Trap:** "In a walkthrough, individual review beforehand is mandatory." — FALSE. It is *optional* (the syllabus says "not required").
+> **Trap:** "In a walkthrough, a scribe is mandatory." — FALSE. A scribe is optional in walkthroughs; the author may even fill the role.
 > **Trap:** "In an inspection, the author can lead the review." — FALSE. The author cannot be the review leader or the scribe.
 
 ---
@@ -155,8 +156,8 @@ The same terms appear in two different chapters with related but distinct meanin
 | "Exploratory testing has no structure." | It uses time-boxed *sessions* guided by a *test charter* |
 | "0-switch coverage tests sequences of transitions." | 0-switch = single transitions only, no chaining |
 | "White-box testing is always dynamic." | White-box *analysis* can be applied statically to pseudocode or unexecutable code |
-| "Wideband Delphi is a named CTFL 4.0 technique." | Only Planning Poker is named; Wideband Delphi is from older versions |
-| "A walkthrough requires individual review beforehand." | Individual review is *optional* in walkthroughs; only the scribe is mandatory |
+| "Planning Poker is the only named estimation technique in CTFL 4.0." | CTFL v4.0.1 names four techniques: Estimation based on ratios, Extrapolation, **Wideband Delphi**, and Three-point estimation. Planning Poker is a *variant* of Wideband Delphi, not a separate technique. |
+| "A walkthrough requires individual review beforehand." | Individual review is *optional* in walkthroughs. A scribe is also optional (not mandatory). |
 | "BVA can be applied to any partition." | BVA only applies to *ordered* partitions (those with min/max values) |
 
 ---

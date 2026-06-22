@@ -62,15 +62,15 @@ An SDLC model defines how development phases and activities relate to each other
 
 ## Testing as a Driver: TDD, ATDD, and BDD — 🧠 Remember (K1)
 
-These approaches flip the traditional order — **tests are written before the code**.
+These approaches are examples of **test-first approaches** to development — they flip the traditional order so that **tests are written before the code**.
 
 | Approach | Who uses it | How it works |
 |---|---|---|
-| **TDD** (Test-Driven Development) | Developers | Write a failing test → write code to pass it → refactor |
-| **ATDD** (Acceptance Test-Driven Development) | Whole team | Derive tests from acceptance criteria before the feature is built |
-| **BDD** (Behavior-Driven Development) | Whole team | Write tests in plain language using Given/When/Then format |
+| **TDD** (Test-Driven Development) | Developers | Write a failing test → write code to pass it → refactor. TDD was designed to replace extensive upfront software design. |
+| **ATDD** (Acceptance Test-Driven Development) | Whole team | Tests are derived from acceptance criteria "as part of the system design process" before the feature is built. |
+| **BDD** (Behavior-Driven Development) | Whole team | Write tests in plain language using Given/When/Then format; test cases "should then be automatically translated into executable tests." |
 
-All three implement the **early testing principle** and support **shift left**.
+All three implement the **early testing principle** and support **shift left**. They also support an **iterative development model** in addition to early testing and shift left.
 
 > **Exam tip (K1):** For FL-2.1.3, you only need to recall who uses each approach and its core idea. The "how it works" details in the table are for context — the exam tests recognition, not reproduction of the procedure.
 
@@ -85,6 +85,8 @@ DevOps bridges development, testing, and operations to deliver high-quality soft
 - Automated regression tests run on every commit
 - Visibility on non-functional quality (performance, reliability) increases
 - Reduces repetitive manual testing through automation
+- CI promotes shift left in testing by encouraging developers to submit high-quality code accompanied by component tests and static analysis
+- Automated processes like CI/CD facilitate establishing stable test environments
 
 > **Exam scope:** The *benefits* of DevOps for testing are directly tested (FL-2.1.4, K2). The risks below are supporting context not covered by a specific LO — understand them but don't memorize them.
 
@@ -110,6 +112,8 @@ Good practices to achieve shift left:
 
 > Shift left may increase early effort and cost, but it saves significantly more later.
 
+> **Important:** For shift left to work, stakeholders must be convinced and bought into the concept. Without stakeholder buy-in, the additional upfront effort cannot be justified.
+
 ---
 
 ## Retrospectives and Process Improvement — 💡 Understand (K2)
@@ -124,6 +128,7 @@ Retrospectives are held at the end of an iteration, project, or release mileston
 - Improved quality of testware
 - Team bonding and learning
 - Better cooperation between development and testing
+- Improved quality of the test basis — deficiencies in the extent and quality of requirements are identified and addressed
 
 ---
 
@@ -141,6 +146,13 @@ Each level has a different focus, test basis, and set of objectives.
 | **System integration testing** | Interfaces between the system and external systems/services | Testers |
 | **Acceptance testing** | Validation; demonstrating readiness for deployment | Business / End users |
 
+> **How test levels are distinguished (K2):** Test levels differ from each other by the following attributes: **test object** (what is being tested), **test objectives** (why it is tested), **test basis** (what the tests are based on), **defects and failures** (what types are typically found), and **approach and responsibilities** (who does it and how).
+
+**How SDLC model affects test levels:**
+- **Sequential models:** Testers participate in requirements reviews and test design in early phases; dynamic testing only happens in later phases when executable code exists.
+- **Agile models:** Lightweight documentation, extensive test automation for regression, experience-based techniques favored for manual testing.
+- **Iterative/incremental models:** Both static and dynamic testing can occur at all test levels within each iteration. Frequent delivery requires fast feedback and extensive regression testing.
+
 ### Acceptance Testing Types — 💡 Understand (K2)
 - **UAT** (User Acceptance Testing): Real users validate the system meets their needs
 - **OAT** (Operational Acceptance Testing): Operational readiness — backup, recovery, security
@@ -153,7 +165,7 @@ Each level has a different focus, test basis, and set of objectives.
 | Type | What it checks |
 |---|---|
 | **Functional testing** | What the system does — functional completeness, correctness, appropriateness |
-| **Non-functional testing** | How well the system behaves — performance, security, usability, reliability, maintainability, portability, safety |
+| **Non-functional testing** | How well the system behaves — ISO/IEC 25010 characteristics: Functional suitability, Performance efficiency, Compatibility, Usability, Reliability, Security, Maintainability, Portability, Safety |
 | **Black-box testing** | Behavior based on specifications, without knowledge of internal structure |
 | **White-box testing** | Internal structure — code paths, architecture, data flows |
 
@@ -163,6 +175,9 @@ Each level has a different focus, test basis, and set of objectives.
 
 ### Change-Related Testing — 💡 Understand (K2)
 - **Confirmation testing**: Verifies that a specific defect has been fixed
+
+  > Two approaches to confirmation testing: (1) Execute all test cases that previously failed due to the defect. (2) Add new tests to cover changes made to fix the defect. When time is short, confirmation testing may be limited to simply reproducing the failure that triggered the defect report.
+
 - **Regression testing**: Ensures that changes haven't broken existing functionality
 
 > Regression testing grows with every release — it's a strong candidate for automation.

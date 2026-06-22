@@ -16,10 +16,9 @@
 |---|---|---|
 | FL-6.1.1 | K2 | Explain how different types of test tools support testing |
 | FL-6.2.1 | K1 | Recall the benefits and risks of test automation |
-| FL-6.2.2 | K1 | Recall the considerations for selecting a tool |
 
 > **Exam tip:** Chapter 6 is the shortest chapter and has **no K3**. The highest level is K2 (FL-6.1.1).
-> FL-6.2.1 and FL-6.2.2 are K1 — recall, not explanation. Don't over-invest time here.
+> FL-6.2.1 is K1 — recall, not explanation. Don't over-invest time here.
 
 ---
 
@@ -92,16 +91,34 @@ Test tools can support almost any test activity. They are categorized by the **a
 |---|---|
 | **CI/CD pipeline tools** | Automatically triggering test execution on every code commit; integrating testing into the build process |
 | **Version control / SCM tools** | Managing source code and testware versions; enabling branching and parallel development |
-| **Collaboration tools** | Communication, shared test documentation, remote team coordination |
+| **Collaboration tools** | Communication, shared test documentation, remote team coordination, and shared decision-making |
 
 > DevOps tools are what make continuous testing possible — they connect the developer's commit
 > to the test execution result without manual intervention (Chapter 2 connection: shift left, DevOps).
 
 ---
 
+### Scalability and Deployment Standardization Tools — 💡 Understand (K2)
+
+| Tool type | What it supports |
+|---|---|
+| **Virtual machines and containerization tools** (e.g., Docker, Kubernetes) | Supporting scalability and consistent test environment provisioning across teams and pipelines |
+
+---
+
+### General-Purpose Tools — 💡 Understand (K2)
+
+| Tool type | What it supports |
+|---|---|
+| **General-purpose tools** (e.g., spreadsheets) | Any other tool that assists in testing — spreadsheets are a valid, if basic, test management tool for small projects |
+
+---
+
 ## 6.2 Benefits and Risks of Test Automation — 🧠 Remember (K1)
 
 Test automation means using tools to execute tests and compare actual results to expected results automatically. It is most valuable for **repetitive, stable, high-volume testing** — not for everything.
+
+> **Key principle:** Simply acquiring a tool does not guarantee success. Each new tool requires effort to achieve real and lasting benefits — including tool introduction, ongoing maintenance, and team training.
 
 ### Benefits of Test Automation — 🧠 Remember (K1)
 
@@ -112,7 +129,7 @@ Test automation means using tools to execute tests and compare actual results to
 | **Objective assessment** | Coverage metrics and results are measured consistently |
 | **Easy access to test status info** | Results dashboards and logs are generated automatically |
 | **Reduced test execution time** | Tests can run in parallel, overnight, or on every commit |
-| **More testing in the same time** | Regression suites that would take days manually can run in hours |
+| **More time for testers to design new, deeper, and more effective tests** | Automation handles repetitive regression work, freeing testers to invest in better test design |
 
 ### Risks of Test Automation — 🧠 Remember (K1)
 
@@ -123,7 +140,11 @@ Test automation means using tools to execute tests and compare actual results to
 | **Using the wrong tool** | Not every tool fits every technology stack or test type |
 | **Over-reliance on automation** | Automated tests can't replace human judgment, especially for UX and exploratory testing |
 | **Maintenance burden** | When the system changes, test scripts break and must be updated |
-| **False sense of security** | Passing automated tests does not mean the system is defect-free |
+| **False sense of security** | Passing automated tests does not mean the system is defect-free *(This is a general testing principle — Principle 1 — not part of the official FL-6.2.1 risk enumeration.)* |
+| **Vendor dependency** | The tool vendor may go out of business, retire the tool, sell it to a different vendor, or provide poor support |
+| **Open-source abandonment** | An open-source tool may be abandoned, with no further updates or security patches |
+| **Platform incompatibility** | The automation tool may not be compatible with the development platform, framework, or technology under test |
+| **Regulatory non-compliance** | The chosen tool may not comply with regulatory requirements or safety standards applicable to the project |
 
 > **The key insight:** Automation is a multiplier — it multiplies the efficiency of good testing,
 > but it also multiplies the problems of bad testing. Bad tests automated at scale are worse than
@@ -131,11 +152,13 @@ Test automation means using tools to execute tests and compare actual results to
 
 ---
 
-## 6.3 Considerations for Selecting a Test Tool — 🧠 Remember (K1)
+## 6.3 Supplementary: Tool Selection Considerations *(not a CTFL v4.0.1 LO)*
+
+> **Note:** This section is supplementary context — the official CTFL v4.0.1 syllabus has no Section 6.3 and no LO covering tool selection criteria. This content is useful for understanding tools in practice but **will not appear directly on the CTFL exam.** Do not study it as an examinable topic.
 
 Choosing a tool is not just a technical decision — it depends on the organization, the project, and the team.
 
-### Factors to consider — 🧠 Remember (K1)
+### Factors to consider
 
 | Factor | What to evaluate |
 |---|---|
@@ -146,7 +169,7 @@ Choosing a tool is not just a technical decision — it depends on the organizat
 | **Vendor support** | Is training available? Is the vendor active and responsive? |
 | **Integration with existing tools** | Does it fit into the current CI/CD pipeline, test management system, and defect tracker? |
 
-### Good practices for tool selection — 🧠 Remember (K1)
+### Good practices for tool selection
 
 - Run a **proof of concept**: try the tool on a real part of the project before committing
 - Evaluate the **vendor's responsiveness** and the community around the tool

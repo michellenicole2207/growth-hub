@@ -22,8 +22,8 @@ A type of acceptance testing performed by internal users at the developer's site
 **Anomaly** `Ch3` `🧠 K1`
 Any result or condition that deviates from expectations, discovered during a review. May or may not be a defect — needs to be investigated.
 
-**ATDD — Acceptance Test-Driven Development** `Ch2` `Ch4` `💡 K2`
-An approach where test cases are written before the user story is implemented, based on acceptance criteria. Steps: specification workshop → test case creation → implementation. Closely related to BDD.
+**ATDD — Acceptance Test-Driven Development** `Ch2` `Ch4` `⚙️ K3`
+An approach where test cases are derived from acceptance criteria as part of the system design process, before the user story is implemented. Steps: specification workshop → test case creation → implementation. Test cases must cover all characteristics of the user story and must not go beyond it. Closely related to BDD.
 
 ---
 
@@ -69,8 +69,14 @@ The test level focused on individual components tested in isolation. Also called
 **Confirmation testing** `Ch2` `💡 K2`
 Testing performed after a defect has been fixed, to verify that the specific defect no longer causes a failure. Also called re-testing.
 
+**Configuration baseline** `Ch5` `💡 K2`
+A formally approved version of a configuration item, from which changes are controlled. Represents a known, stable state of a work product. Any change to a baseline must go through a formal change control process.
+
+**Configuration item** `Ch5` `💡 K2`
+Any work product placed under configuration management — e.g., test plans, test cases, test scripts, test data, or test environment specifications.
+
 **Configuration management (CM)** `Ch5` `💡 K2`
-The discipline of identifying, tracking, and controlling versions of testware and test objects. Ensures test cases can be linked to the correct software version and that testing is reproducible. Supporting context for FL-5.1.1 — not a standalone LO.
+The discipline of identifying, controlling, and tracking work products and their versions throughout the project lifecycle. Ensures testers are always working with the correct version of the test basis and testware. Enables reproducibility of test results and supports impact analysis. Key concepts: configuration item, baseline, change control.
 
 **CI/CD — Continuous Integration / Continuous Delivery** `Ch6` `🧠 K1`
 A DevOps practice where every code change automatically triggers a build and a test run. Integrates testing directly into the development pipeline, enabling fast feedback and supporting shift left. CI/CD tools connect developer commits to test results without manual intervention.
@@ -117,7 +123,16 @@ Testing performed by executing the software. Defects are revealed through failur
 Conditions that must be satisfied before a test activity begins. Prevents wasted effort on testing when the system is not ready. In Agile: Definition of Ready (DoR).
 
 **Equivalence partitioning (EP)** `Ch4` `⚙️ K3`
-A black-box technique that divides input (or output) data into partitions where all values are expected to be treated identically by the system. One test case per partition is sufficient. Coverage = partitions exercised ÷ total partitions.
+A black-box technique that divides input (or output) data into partitions where all values are expected to be treated identically by the system. One test case per partition is sufficient. Coverage = partitions exercised ÷ total partitions. Partitions may be continuous or discrete, ordered or unordered, finite or infinite. Sources include not only input parameters but also configuration items, internal values, time-related values, and interface parameters. Partitions must be non-empty and non-overlapping.
+
+**Estimation based on ratios** `Ch5` `💡 K2`
+A test effort estimation technique that uses metrics from previous similar projects — e.g., the ratio of test effort to development effort — and applies those ratios to current project data.
+
+**Extended-entry decision table** `Ch4` `💡 K2`
+A decision table variant where conditions can take multiple values (ranges, partitions, or discrete values) rather than just true/false. Actions may also specify exact output values. More compact than limited-entry tables but harder to read. Contrast with: *limited-entry decision table*.
+
+**Extrapolation** `Ch5` `💡 K2`
+A test effort estimation technique that uses measurements collected early in the current project to estimate the remaining effort. The more data points collected, the more accurate the estimate becomes.
 
 **Error** `Ch1` `🧠 K1`
 A human mistake — for example, a developer misunderstanding a requirement. An error introduces a defect into a work product.
@@ -203,6 +218,9 @@ A type of acceptance testing focused on operational readiness: backup and recove
 
 ## P
 
+**Planning Poker** `Ch5` `🧠 K1`
+An Agile estimation technique where team members independently select a card (representing their estimate) and reveal all cards simultaneously. Differences are discussed until consensus is reached. Planning Poker is a **variant of Wideband Delphi** adapted for Agile teams — it is not a separate estimation technique.
+
 **Priority** `Ch5` `💡 K2`
 How urgently a defect needs to be fixed, from a business perspective. High priority means it must be fixed soon — regardless of severity. A cosmetic bug on the login screen may be low severity but high priority.
 
@@ -236,7 +254,7 @@ A form of static testing where one or more people manually evaluate a work produ
 The role responsible for organizing the overall review: deciding who participates, when, and where. Cannot be the same person as the scribe or author in an inspection.
 
 **Risk** `Ch5` `🧠 K1`
-The possibility of an event occurring that causes an adverse consequence. Characterized by its likelihood and impact. The combination of both determines the risk level.
+A potential event, hazard, threat, or situation whose occurrence causes an adverse effect. Characterized by its likelihood and impact. Risk level = likelihood × impact.
 
 **Risk assessment** `Ch5` `🧠 K1`
 The second stage of risk-based testing: evaluating identified risks by their likelihood and impact to determine which areas need the most testing attention.
@@ -255,7 +273,7 @@ The fundamental underlying reason why an error was made — e.g., a misunderstoo
 ## S
 
 **Scribe** `Ch3` `🧠 K1`
-The role responsible for recording anomalies, decisions, and new findings during a review meeting. Mandatory in walkthroughs and inspections.
+The role responsible for recording anomalies, decisions, and new findings during a review meeting. Mandatory in inspections. Optional in walkthroughs — the author may fill this role.
 
 **Severity** `Ch5` `💡 K2`
 The impact of a defect on the system — how badly it affects functionality, data, or operations. Classified as Critical, Major, Minor, or Trivial. Not the same as priority.
@@ -304,7 +322,7 @@ A tool that supports the planning, monitoring, controlling, and reporting of tes
 A development practice where developers write a failing unit test first, then write code to make it pass, then refactor. Implements the early testing principle.
 
 **Technical review** `Ch3` `💡 K2`
-A semi-formal review type led by a trained moderator or peer leader with technically qualified reviewers. Focus is on achieving consensus on technical issues and detecting anomalies.
+A semi-formal review type led by a trained moderator with technically qualified reviewers. Focus is on achieving consensus on technical issues and detecting anomalies. Objectives include gaining consensus on technical problems, generating new ideas, evaluating quality, and building confidence in the work product.
 
 **Test basis** `Ch1` `🧠 K1`
 All the information used to derive test cases — requirements, user stories, designs, code, risk assessments, etc. Good traceability links test cases back to the test basis.
@@ -334,7 +352,10 @@ A document that describes the objectives, scope, approach, schedule, and resourc
 A report that communicates the current testing status to stakeholders. Covers the period, progress vs. plan, impediments, and planned next steps.
 
 **Test pyramid** `Ch5` `💡 K2`
-A model recommending a distribution of tests across levels: many unit tests (fast, cheap), fewer integration tests, and very few UI/end-to-end tests (slow, brittle). Encourages automating at the lowest effective level.
+A model recommending a distribution of tests across levels: many fast, cheap tests at the bottom (closer to code), fewer at mid-levels, and very few slow/brittle tests at the top (closer to UI). Encourages automating at the lowest effective level. **The number and naming of layers may differ** — the principle (more tests at lower levels) matters more than any specific layer structure.
+
+**Three-point estimation** `Ch5` `💡 K2`
+A test effort estimation technique that produces three estimates: most optimistic (a), most likely (m), most pessimistic (b). Final estimate = (a + 4m + b) / 6. Reduces bias and accounts for uncertainty by weighting the most likely value four times.
 
 **Test type** `Ch2` `💡 K2`
 A classification of testing by what aspect of the system is being tested: functional, non-functional, black-box, or white-box. All four types can be applied at any test level.
@@ -343,7 +364,7 @@ A classification of testing by what aspect of the system is being tested: functi
 All artifacts produced by test activities — including test plans, test cases, test scripts, test data, test logs, defect reports, and completion reports.
 
 **Testing quadrants** `Ch5` `💡 K2`
-A framework (Brian Marick) for categorizing test types by two axes: technology-facing vs. business-facing, and supporting the team vs. critiquing the product. Q1 (tech, support): unit/integration tests. Q2 (business, support): functional/story tests. Q3 (business, critique): exploratory/UAT. Q4 (tech, critique): performance/security.
+A framework (Brian Marick) for categorizing test types by two axes: technology-facing vs. business-facing, and supporting the team vs. critiquing the product. Q1 (tech, support): component/component integration tests. Q2 (business, support): functional tests, story tests, API testing. Q3 (business, critique): exploratory testing, usability testing, UAT. Q4 (tech, critique): performance, load, stress, security, smoke tests — **except usability tests**, which belong in Q3.
 
 ---
 
@@ -370,7 +391,10 @@ Confirming that a work product meets its specified requirements. Asking: *"Are w
 ## W
 
 **Walkthrough** `Ch3` `🧠 K1`
-A review type led by the author, who guides participants through the work product. Aims to educate, gain consensus, and detect anomalies. Individual review beforehand is optional; scribe is mandatory.
+A review type led by the author, who guides participants through the work product. Aims to educate, gain consensus, and detect anomalies. Individual review beforehand is **not required**. A scribe is **optional** (the author may fill this role). Objectives include: evaluating quality, building confidence, educating reviewers, gaining consensus, generating new ideas, motivating authors.
+
+**Wideband Delphi** `Ch5` `💡 K2`
+A named CTFL v4.0.1 estimation technique based on expert consensus. Experts independently estimate effort, results are shared anonymously, differences are discussed, and the process repeats until consensus is reached. Planning Poker is a variant of Wideband Delphi adapted for Agile teams.
 
 **White-box technique** `Ch4` `💡 K2`
 A test technique that derives test cases from the internal structure of the software — code paths, branches, data flows. Tests depend on the implementation. Includes statement testing and branch testing.

@@ -14,15 +14,17 @@
 
 | LO | K | Topic |
 |---|---|---|
-| FL-3.1.1 | K1 | Recall work products that can be examined by static testing |
+| FL-3.1.1 | K1 | Recognize types of work products that can be examined by static testing |
 | FL-3.1.2 | K2 | Explain the value of static testing |
-| FL-3.1.3 | K2 | Compare static testing and dynamic testing |
-| FL-3.2.1 | K1 | Recall the activities, roles, and responsibilities of a formal review |
-| FL-3.2.2 | K2 | Explain how the different review types differ from one another |
-| FL-3.2.3 | K1 | Recall the factors for a successful review |
+| FL-3.1.3 | K2 | Explain the difference between static and dynamic testing |
+| FL-3.2.1 | K1 | Identify the benefits of early and frequent stakeholder feedback |
+| FL-3.2.2 | K2 | Summarize the activities of the review process |
+| FL-3.2.3 | K1 | Recall which responsibilities are assigned to the principal roles when performing reviews |
+| FL-3.2.4 | K2 | Distinguish between the different review types |
+| FL-3.2.5 | K1 | Recall the success factors for reviews |
 
-> **Exam tip:** No K3 in this chapter. Three K1 items (FL-3.1.1, FL-3.2.1, FL-3.2.3) — pure recall.
-> FL-3.1.3 and FL-3.2.2 require you to *compare* and *explain differences* — classic K2.
+> **Exam tip:** No K3 in this chapter. Four K1 items (FL-3.1.1, FL-3.2.1, FL-3.2.3, FL-3.2.5) — pure recall.
+> FL-3.1.3 and FL-3.2.4 require you to *explain differences* and *distinguish* — classic K2.
 
 ---
 
@@ -91,7 +93,7 @@ Static testing is powerful because:
 
 ## 3.2 Feedback and Review Process — 💡 Understand (K2)
 
-### Why Early and Frequent Stakeholder Feedback Matters — 💡 Understand (K2)
+### Why Early and Frequent Stakeholder Feedback Matters — 🧠 Remember (K1)
 
 If stakeholders aren't involved regularly during development, the product may drift from their original vision. The consequences:
 - Costly rework
@@ -119,6 +121,8 @@ Based on the **ISO/IEC 20246** standard:
 | **4. Communication and analysis** | Anomalies are discussed in a review meeting; decisions made on status, ownership, and follow-up actions |
 | **5. Fixing and reporting** | The **author** fixes the defects found; the **review leader** writes the review report; the work product is accepted once exit criteria are met |
 
+> **Practical note:** The size of many work products makes them too large to be covered by a single review. The review process may be invoked multiple times to complete the review for the entire work product.
+
 ---
 
 ## Roles in a Review — Who Does What? — 🧠 Remember (K1)
@@ -141,11 +145,15 @@ Based on the **ISO/IEC 20246** standard:
 | Type | Formality | Led by | Key characteristics |
 |---|---|---|---|
 | **Informal review** | Lowest | Anyone | No defined process; no formal output; just find anomalies |
-| **Walkthrough** | Low–Medium | **Author** | Author guides the team through the work product; educates, gains consensus, detects anomalies; individual review beforehand is optional; **scribe is mandatory** |
-| **Technical review** | Medium–High | **Trained moderator or peer leader** | Technically qualified reviewers; focus on consensus on technical problems and detecting anomalies |
+| **Walkthrough** | Low–Medium | **Author** | Author guides the team through the work product; objectives: evaluating quality and building confidence in the work product, educating reviewers, gaining consensus, generating new ideas, motivating and enabling authors to improve, detecting anomalies; Scribe: Not required (optional — the author may also fill this role); Reviewers might perform an individual review before the walkthrough, but this is not required |
+| **Technical review** | Medium–High | **Moderator** | Technically qualified reviewers; objectives: gaining consensus and making decisions on technical problems, detecting anomalies, evaluating quality, building confidence in the work product, generating new ideas, motivating authors to improve |
 | **Inspection** | Highest | **Moderator** (NOT the author) | Follows the full defined process; maximum anomaly detection is the main goal; metrics are collected; **author cannot be review leader or scribe** |
 
 > **Key exam point:** In an inspection, the **author cannot act as review leader or scribe** — this is unique to this review type.
+
+> **Exam tip:** The syllabus does NOT mandate a scribe for walkthroughs. Individual review beforehand is also "not required."
+
+> **Factors affecting required formality:** The required level of review formality depends on: the SDLC being followed, the maturity of the development process, the criticality and complexity of the work product, legal or regulatory requirements, and the need for an audit trail.
 
 ---
 

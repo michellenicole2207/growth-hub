@@ -93,24 +93,18 @@ Conditions that determine when a test activity is sufficiently complete.
 
 ## 5.4 Estimation Techniques — ⚙️ Apply (K3)
 
-Estimating how much testing effort is needed is notoriously difficult. ISTQB covers two main techniques:
+Estimating how much testing effort is needed is notoriously difficult. The CTFL v4.0.1 syllabus names four specific estimation techniques:
 
-### Metrics-Based Estimation — ⚙️ Apply (K3)
+### Estimation Techniques — ⚙️ Apply (K3)
 
-Use data from previous similar projects to estimate current effort.
+| Technique | How it works |
+|---|---|
+| **Estimation based on ratios** | Uses metrics from previous similar projects (e.g., ratio of test effort to development effort). Applied to current project data to estimate test effort. |
+| **Extrapolation** | Uses measurements collected early in the current project to estimate remaining effort. The more data collected, the more accurate the estimate. |
+| **Wideband Delphi** | Expert-based group technique. Experts independently estimate, share results anonymously, discuss differences, and repeat until consensus is reached. Planning Poker is a variant of Wideband Delphi adapted for Agile. |
+| **Three-point estimation** | Produces three estimates: most optimistic (a), most likely (m), most pessimistic (b). Final estimate = (a + 4m + b) / 6. Reduces bias and accounts for uncertainty. |
 
-- Derive estimates from actual metrics: defect rates, test execution times, number of test cases per function point
-- Useful when historical data is available and the current project is similar enough
-
-### Expert-Based Estimation — ⚙️ Apply (K3)
-
-Use the knowledge and judgment of experienced testers.
-
-**Common approaches:**
-- **Planning Poker**: team members simultaneously reveal effort estimates; outliers are discussed until consensus is reached (used in Agile)
-- **Wideband Delphi**: structured rounds of anonymous estimation and discussion until the team converges *(from older ISTQB versions — CTFL 4.0 only names Planning Poker as an example of expert-based estimation)*
-
-> Both techniques can be combined — use historical data as a baseline and expert judgment to adjust for known differences.
+> **Exam note:** Planning Poker is a **variant of Wideband Delphi**, not a separate technique. Both are named in the syllabus.
 
 ---
 
@@ -149,6 +143,8 @@ The **test pyramid** is a model that groups tests by granularity and recommends 
 - **Middle (integration)**: tests of interactions between components
 - **Top (UI/E2E)**: few, slow, brittle tests — use only where needed
 
+> **Important:** The test pyramid is a model, not a fixed rule. **The number and naming of the layers may differ.** Multiple variants exist in industry (e.g., 3-layer, 4-layer, with or without separate API/service layer). What the model conveys is that: lower layers (closer to code) should have more tests, be faster, and be cheaper; higher layers (closer to UI/user) should have fewer tests, be slower, and be more expensive. The general principle of test distribution matters more than the specific layer names.
+
 > The pyramid implies: **automate at the lowest level possible**. The more you push automation up to the UI level, the slower and more fragile your test suite becomes.
 
 ---
@@ -162,8 +158,14 @@ The **testing quadrants** (Brian Marick) categorize test types by two axes:
 
 | | Supporting the team | Critiquing the product |
 |---|---|---|
-| **Technology-facing** | **Q1**: Component tests, unit tests, integration tests | **Q4**: Performance, security, reliability, "ility" tests |
-| **Business-facing** | **Q2**: Automated functional tests, story tests, prototypes, simulations | **Q3**: Exploratory testing, usability testing, UAT, alpha/beta |
+| **Technology-facing** | **Q1**: Component tests, component integration tests | **Q4**: Performance tests, load tests, stress tests, security tests, smoke tests (**note: usability tests go in Q3, not Q4**) |
+| **Business-facing** | **Q2**: Functional tests, story tests, user story tests, prototypes, simulations, API testing | **Q3**: Exploratory testing, usability testing, user acceptance testing |
+
+**Quadrant overview:**
+- **Q1** (technology-facing, supporting the team): component tests, component integration tests
+- **Q2** (business-facing, supporting the team): functional tests, story tests, user story tests, prototypes, simulations, API testing
+- **Q3** (business-facing, critiquing the product): exploratory testing, usability testing, user acceptance testing
+- **Q4** (technology-facing, critiquing the product): performance tests, load tests, stress tests, security tests, smoke tests — **note: usability tests are business-facing and belong in Q3, not Q4**
 
 > The quadrants are a **communication tool** — they help teams talk about what kinds of testing are needed and who should do them. They are not prescriptive.
 
@@ -175,10 +177,19 @@ Risk is central to test planning. It drives prioritization, coverage decisions, 
 
 ### Key concepts — 🧠 Remember (K1)
 
-- **Risk**: the chance of an event occurring that causes an adverse outcome
+- **Risk**: a **potential event, hazard, threat, or situation** whose occurrence causes an adverse effect. Risk level = likelihood × impact.
 - **Risk level**: a combination of **likelihood** (probability) and **impact** (consequence)
 - **Product risk**: risk that something in the system will fail — drives testing scope
 - **Project risk**: risk to the project itself (schedule, budget, team) — managed through project management
+
+### Project Risk Categories — 💡 Understand (K2)
+
+The syllabus organizes project risks into four named categories:
+
+- **Organizational risks:** funding cuts, conflicting priorities, changes in organizational structure
+- **People risks:** insufficient skills, staff conflicts, team communication issues
+- **Technical risks:** technology failures, tool issues, environment problems
+- **Supplier risks:** third-party delivery failures, supplier going out of business, contract issues
 
 ### Risk-Based Testing — 💡 Understand (K2)
 
@@ -192,6 +203,21 @@ Uses risk as the primary guide for:
 2. **Risk assessment**: evaluate likelihood and impact; prioritize accordingly
 
 > If a high-risk area receives adequate testing and no defects are found, this provides evidence of quality — not just the absence of failures.
+
+### 5.2.4 Product Risk Control — 💡 Understand (K2)
+
+Product risk control consists of two activities:
+
+**Risk mitigation** — taking actions to reduce the likelihood or impact of identified risks:
+- Testing the high-risk areas more thoroughly
+- Using specific test techniques for particular risk types
+- Applying multiple independent testing activities to high-risk items
+- Adjusting test design and execution based on risk assessment
+
+**Risk monitoring** — tracking identified risks throughout the project:
+- Checking whether mitigation actions have reduced risk levels
+- Identifying new risks that emerge during the project
+- Updating the risk register and adjusting test activities accordingly
 
 ---
 
@@ -241,19 +267,34 @@ Produced at the end of a test phase, iteration, or project. Summarize:
 - Testware to archive or hand off
 - Lessons learned
 
+### 5.3.3 Communicating the Status of Testing — 💡 Understand (K2)
+
+The goal of communicating test status is to ensure stakeholders have the information they need to make decisions (about release, risk acceptance, etc.).
+
+**Communication options:**
+
+| Option | When to use |
+|---|---|
+| **Verbal communication** | Informal, immediate updates; useful for daily collaboration |
+| **Dashboards** | Real-time visual summaries of test progress, coverage, and defect status; suitable for distributed teams and executives |
+| **Electronic communication** | Emails or automated messaging for specific events (e.g., test run completed, critical defect found) |
+| **Test progress reports** | Formal periodic reports during test execution; tracks progress against plan |
+| **Test completion reports** | Produced at major milestones (end of a test level, end of iteration, release); includes summary of what was tested, results, remaining risks |
+
+> **Exam tip (K2):** A question may describe a stakeholder's information need and ask which communication channel is most appropriate. Match the formality and frequency of the channel to the stakeholder's needs.
+
 ---
 
-## 5.10 Configuration Management in Testing — 💡 Understand (K2)
+## 5.4 Configuration Management — 💡 Understand (K2)
 
-> **Exam scope:** CM is supporting context for FL-5.1.1 (test plan content) — not a standalone LO in CTFL 4.0. Understand its purpose and how it relates to testware traceability, but don't memorize this section in depth.
+Configuration management (CM) provides a discipline for identifying, controlling, and tracking work products and their versions throughout the project lifecycle.
 
-Configuration management (CM) ensures that testware remains consistent, identifiable, and traceable.
+**Key concepts:**
+- **Configuration item:** Any work product placed under configuration management (e.g., test cases, test scripts, test data, test environment specs, test plans)
+- **Baseline:** A formally approved version of a configuration item, from which changes are controlled. A baseline represents a known, stable state.
+- **Change control:** Any modification to a baselined item must go through a formal change control process, including approval and impact assessment.
 
-**What CM does for testing:**
-- Identifies and tracks versions of testware (test cases, scripts, environments, data)
-- Ensures test cases link to the correct version of the test object
-- Enables reproducibility — running the same test in the same environment
-- Supports change control — if the software changes, what tests need to be updated?
+**CM and testing:** CM ensures that testers are working with the correct versions of the test basis and testware. It enables reproducibility of test results and supports impact analysis when changes are made.
 
 > In practice: your test cases should reference specific software versions. "Tested with v2.3.1" is meaningful only if CM ensures that v2.3.1 can be reproduced.
 
@@ -287,6 +328,8 @@ New → Assigned → Open → Fixed → Retest → Closed
 | **Priority** | How urgently it needs to be fixed |
 | **Status** | Current state in the lifecycle |
 | **Attachments** | Logs, screenshots, videos |
+| **Context of the defect** | Test phase, environment, test technique in use when the defect was found |
+| **References** | Links to the test case that found the defect, related requirements, or related defects |
 
 > **Severity vs. Priority:** A typo in a login button label is low severity but possibly high priority (it's the first thing every user sees). A crash in a rarely-used feature might be high severity but low priority.
 
@@ -299,11 +342,11 @@ New → Assigned → Open → Fixed → Retest → Closed
 | **Test plan** | Document describing the scope, approach, schedule, and resources for testing |
 | **Entry criteria** | Conditions that must be met before a test activity begins |
 | **Exit criteria** | Conditions that determine when a test activity is complete |
-| **Risk** | The possibility of an event with an adverse consequence |
+| **Risk** | A potential event, hazard, threat, or situation whose occurrence causes an adverse effect |
 | **Product risk** | Risk that a system component fails to meet expected behavior |
 | **Project risk** | Risk to the project schedule, budget, or resources |
 | **Risk-based testing** | Using risk as the guide for prioritizing what, how much, and when to test |
-| **Test pyramid** | Model recommending more unit tests than integration or UI tests |
+| **Test pyramid** | Model recommending more unit tests than integration or UI tests; number and naming of layers may vary |
 | **Testing quadrants** | Framework categorizing tests by audience (business vs. technology) and purpose (guiding vs. critiquing) |
 | **Test monitoring** | Checking test progress against the plan |
 | **Test control** | Taking corrective action when deviations are found |
@@ -311,6 +354,10 @@ New → Assigned → Open → Fixed → Retest → Closed
 | **Severity** | The impact of a defect on the system |
 | **Priority** | The urgency with which a defect should be fixed |
 | **Configuration management** | Tracking versions of testware to ensure consistency and reproducibility |
+| **Wideband Delphi** | Expert-based estimation technique using anonymous rounds of estimation and discussion until consensus |
+| **Three-point estimation** | Estimation using optimistic, most likely, and pessimistic values: (a + 4m + b) / 6 |
+| **Risk mitigation** | Actions taken to reduce the likelihood or impact of identified risks |
+| **Risk monitoring** | Tracking risks throughout the project and updating the risk register accordingly |
 
 ---
 
@@ -318,15 +365,21 @@ New → Assigned → Open → Fixed → Retest → Closed
 
 - What is the purpose of a test plan and what does it typically include?
 - What is the difference between entry criteria and exit criteria? Give one example of each.
-- What are the two main estimation techniques covered in ISTQB? How do they differ?
+- What are the four estimation techniques named in CTFL v4.0.1? How does three-point estimation work?
+- What is the relationship between Planning Poker and Wideband Delphi?
 - What is risk-based test prioritization and why is it the most common strategy?
-- What is the test pyramid and what does it recommend about automation?
+- What is the test pyramid and what does it recommend about automation? Why can the number of layers vary?
 - What are the four testing quadrants and what axes define them?
+- Which quadrant does usability testing belong to, and why does it matter?
 - What is the difference between product risk and project risk?
+- What are the four categories of project risk named in the syllabus?
 - What are the two stages of risk-based testing (identification and assessment)?
+- What are the two activities of product risk control?
 - What is the difference between test monitoring and test control?
 - What should a test completion report include?
+- What are the five communication options for reporting test status? When would you use a dashboard vs. a verbal update?
 - What is the difference between severity and priority in defect management?
-- Why does configuration management matter for testing?
+- Why does configuration management matter for testing? What is a baseline?
+- What are the two fields added to defect reports beyond the basic list (context and references)?
 - How do entry/exit criteria relate to Definition of Ready and Definition of Done in Agile?
 - What metrics would you collect to monitor test progress?
