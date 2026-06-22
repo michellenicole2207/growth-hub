@@ -117,7 +117,7 @@ Based on the **ISO/IEC 20246** standard:
 | **2. Review initiation** | Ensure all participants have access, understand their role, and are prepared |
 | **3. Individual review** | Each reviewer independently assesses the work product; logs anomalies, recommendations, and questions |
 | **4. Communication and analysis** | Anomalies are discussed in a review meeting; decisions made on status, ownership, and follow-up actions |
-| **5. Fixing and reporting** | Defect reports are created; work product is accepted once exit criteria are met; results are reported |
+| **5. Fixing and reporting** | The **author** fixes the defects found; the **review leader** writes the review report; the work product is accepted once exit criteria are met |
 
 ---
 
@@ -141,8 +141,8 @@ Based on the **ISO/IEC 20246** standard:
 | Type | Formality | Led by | Key characteristics |
 |---|---|---|---|
 | **Informal review** | Lowest | Anyone | No defined process; no formal output; just find anomalies |
-| **Walkthrough** | Low–Medium | **Author** | Author guides the team through the work product; educates, gains consensus, detects anomalies; individual review beforehand is optional |
-| **Technical review** | Medium–High | **Moderator** | Technically qualified reviewers; focus on consensus on technical problems and detecting anomalies |
+| **Walkthrough** | Low–Medium | **Author** | Author guides the team through the work product; educates, gains consensus, detects anomalies; individual review beforehand is optional; **scribe is mandatory** |
+| **Technical review** | Medium–High | **Trained moderator or peer leader** | Technically qualified reviewers; focus on consensus on technical problems and detecting anomalies |
 | **Inspection** | Highest | **Moderator** (NOT the author) | Follows the full defined process; maximum anomaly detection is the main goal; metrics are collected; **author cannot be review leader or scribe** |
 
 > **Key exam point:** In an inspection, the **author cannot act as review leader or scribe** — this is unique to this review type.

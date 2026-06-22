@@ -40,7 +40,17 @@ The ISTQB exam classifies every learning objective at one of three cognitive lev
 
 ## What is Testing, really? — 💡 Understand (K2)
 
-Software testing is a set of activities to **discover defects** and **evaluate the quality** of software work products. But here's what many people get wrong:
+Software testing is a set of activities to **discover defects**, **evaluate quality**, and **provide information** so stakeholders can make informed decisions. Testing has seven official objectives (FL-1.1.1 — K1, know them all):
+
+1. Evaluate work products — requirements, user stories, designs, code
+2. Trigger failures and find defects
+3. Ensure required coverage of the test object
+4. Reduce the risk of inadequate software quality
+5. Verify that specified requirements have been fulfilled
+6. Verify compliance with contractual and legal requirements
+7. Provide information to stakeholders to allow informed decisions
+
+But here's what many people get wrong about testing:
 
 - Testing is **not only** about finding bugs — it also builds confidence that the software works
 - Testing is **not only** about running the software — it includes reviewing documents, designs, and requirements (static testing) too
@@ -134,7 +144,7 @@ One person can hold both roles at the same time, depending on the project contex
 
 ---
 
-## Essential Skills for Testers — 💡 Understand (K2)
+## Essential Skills for Testers — 🧠 Remember (K1)
 
 Good testers need a mix of:
 - **Testing knowledge** — knowing how to apply techniques effectively
@@ -150,13 +160,13 @@ Everyone on the team is responsible for quality — not just testers. Testers co
 
 ### Independence of Testing — 💡 Understand (K2)
 Independent testers find different defects than the author because they have different cognitive biases. Levels of independence:
-1. Author tests their own work (no independence)
+1. Author tests their own work (lowest independence)
 2. Peers from the same team
 3. Testers from outside the team (high independence)
 4. Testers from outside the organization (very high independence)
 
 **Benefit:** Different perspective catches more defects.
-**Drawback:** Risk of isolation, communication problems, or developers losing sense of responsibility for quality.
+**Drawback:** Risk of isolation, communication problems, developers losing sense of responsibility for quality, or creating an "us vs. them" mentality between testers and developers.
 
 ---
 

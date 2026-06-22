@@ -108,7 +108,7 @@ Use the knowledge and judgment of experienced testers.
 
 **Common approaches:**
 - **Planning Poker**: team members simultaneously reveal effort estimates; outliers are discussed until consensus is reached (used in Agile)
-- **Wideband Delphi**: structured rounds of anonymous estimation and discussion until the team converges
+- **Wideband Delphi**: structured rounds of anonymous estimation and discussion until the team converges *(from older ISTQB versions — CTFL 4.0 only names Planning Poker as an example of expert-based estimation)*
 
 > Both techniques can be combined — use historical data as a baseline and expert judgment to adjust for known differences.
 
@@ -125,7 +125,7 @@ Not all tests are equally important. Prioritization determines the order in whic
 | **Risk-based** | Highest risk areas first — most impact if they fail |
 | **Coverage-based** | Tests that cover more requirements or code first |
 | **Requirements-based** | Tests linked to the most critical or important requirements |
-| **Activity-based** | Dependency-driven order (some tests must run before others) |
+| **Activity-based** | Dependency-driven order (some tests must run before others) *(supporting concept — not defined in the CTFL 4.0 syllabus)* |
 
 > In practice, risk-based prioritization is the most common and the most effective — it maximizes defect detection in the shortest time when time is limited.
 
@@ -162,8 +162,8 @@ The **testing quadrants** (Brian Marick) categorize test types by two axes:
 
 | | Supporting the team | Critiquing the product |
 |---|---|---|
-| **Business-facing** | Q1: Automated functional tests, story tests, prototypes, simulations | Q3: Exploratory testing, usability testing, UAT, alpha/beta |
-| **Technology-facing** | Q2: Unit tests, component tests, integration tests | Q4: Performance, security, reliability, "ility" tests |
+| **Technology-facing** | **Q1**: Component tests, unit tests, integration tests | **Q4**: Performance, security, reliability, "ility" tests |
+| **Business-facing** | **Q2**: Automated functional tests, story tests, prototypes, simulations | **Q3**: Exploratory testing, usability testing, UAT, alpha/beta |
 
 > The quadrants are a **communication tool** — they help teams talk about what kinds of testing are needed and who should do them. They are not prescriptive.
 
@@ -245,6 +245,8 @@ Produced at the end of a test phase, iteration, or project. Summarize:
 
 ## 5.10 Configuration Management in Testing — 💡 Understand (K2)
 
+> **Exam scope:** CM is supporting context for FL-5.1.1 (test plan content) — not a standalone LO in CTFL 4.0. Understand its purpose and how it relates to testware traceability, but don't memorize this section in depth.
+
 Configuration management (CM) ensures that testware remains consistent, identifiable, and traceable.
 
 **What CM does for testing:**
@@ -262,6 +264,8 @@ Configuration management (CM) ensures that testware remains consistent, identifi
 The defect management process tracks defects from discovery to closure.
 
 ### Defect lifecycle (typical) — 💡 Understand (K2)
+
+> **Note:** The CTFL 4.0 syllabus does not prescribe specific lifecycle states. The diagram below is a common industry pattern for illustration. For the exam, focus on the **defect report fields** (FL-5.4.1/5.4.2), not the lifecycle state names.
 
 ```
 New → Assigned → Open → Fixed → Retest → Closed

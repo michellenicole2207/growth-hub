@@ -72,6 +72,8 @@ These approaches flip the traditional order — **tests are written before the c
 
 All three implement the **early testing principle** and support **shift left**.
 
+> **Exam tip (K1):** For FL-2.1.3, you only need to recall who uses each approach and its core idea. The "how it works" details in the table are for context — the exam tests recognition, not reproduction of the procedure.
+
 ---
 
 ## DevOps and Testing — 💡 Understand (K2)
@@ -83,6 +85,8 @@ DevOps bridges development, testing, and operations to deliver high-quality soft
 - Automated regression tests run on every commit
 - Visibility on non-functional quality (performance, reliability) increases
 - Reduces repetitive manual testing through automation
+
+> **Exam scope:** The *benefits* of DevOps for testing are directly tested (FL-2.1.4, K2). The risks below are supporting context not covered by a specific LO — understand them but don't memorize them.
 
 **Risks and challenges:**
 - DevOps pipeline must be defined and maintained
@@ -154,6 +158,8 @@ Each level has a different focus, test basis, and set of objectives.
 | **White-box testing** | Internal structure — code paths, architecture, data flows |
 
 > All four test types can be applied at **any** test level.
+
+> **Note:** "Black-box" and "white-box" appear in both Chapter 2 (as test *types*) and Chapter 4 (as test *technique categories*). In Chapter 2 they classify *what the tests are based on* (spec vs. structure); in Chapter 4 they classify *how test cases are derived*. Same terms, related but distinct meaning — don't let it confuse you.
 
 ### Change-Related Testing — 💡 Understand (K2)
 - **Confirmation testing**: Verifies that a specific defect has been fixed

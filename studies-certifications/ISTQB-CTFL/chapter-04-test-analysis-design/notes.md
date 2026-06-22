@@ -25,7 +25,7 @@
 | FL-4.4.1 | K2 | Explain error guessing |
 | FL-4.4.2 | K2 | Explain exploratory testing |
 | FL-4.4.3 | K2 | Explain checklist-based testing |
-| FL-4.5.1 | K2 | Recall the factors that make a user story good |
+| FL-4.5.1 | K2 | Explain the factors that make a good user story (INVEST criteria) |
 | FL-4.5.2 | K2 | Recall the typical formats for writing acceptance criteria |
 | FL-4.5.3 | K2 | Summarize the activities of the ATDD approach |
 
@@ -80,7 +80,7 @@ Think of test techniques as three different lenses for looking at a system:
 | Version | Coverage items per boundary | More rigorous? |
 |---|---|---|
 | **2-value BVA** | Boundary value + its closest neighbor from the adjacent partition | Less |
-| **3-value BVA** | Boundary value + both its neighbors | More — can catch off-by-one errors 2-value misses |
+| **3-value BVA** | The boundary value itself, the value immediately below it, and the value immediately above it | More — can catch off-by-one errors 2-value misses |
 
 > **Example:** For a range 1–10 using 3-value BVA, test: 0, 1, 2 (lower boundary) and 9, 10, 11 (upper boundary).
 
@@ -103,6 +103,8 @@ Think of test techniques as three different lenses for looking at a system:
 **100% coverage** = exercise all columns with feasible condition combinations.
 Coverage = feasible columns exercised ÷ total feasible columns.
 
+> **Note:** Coverage is measured against the actual columns in the table being used. If the table has been minimized (rules collapsed), coverage is calculated against its actual columns — not against the theoretical 2ⁿ maximum.
+
 **Strength:** Reveals gaps and contradictions in requirements; systematic — nothing gets overlooked.
 **Weakness:** With many conditions, the number of rules grows exponentially (2ⁿ). Use a minimized table or risk-based approach to reduce scope.
 
@@ -124,7 +126,7 @@ A test case = a sequence of events that produces a sequence of state changes.
 | Coverage | What it exercises | Notes |
 |---|---|---|
 | **All states** | All states at least once | Weakest — can be achieved without testing all transitions |
-| **Valid transitions** (0-switch) | All valid transitions | Most widely used criterion |
+| **Valid transitions** (0-switch) | All valid transitions — each valid transition exercised at least once, without chaining sequences (0-switch = single steps only) | Most widely used criterion |
 | **All transitions** | All valid + all invalid transitions | Strongest; required for mission/safety-critical software |
 
 > **Key exam point:** Achieving valid transitions coverage guarantees all states coverage. Achieving all transitions coverage guarantees both.
@@ -166,7 +168,7 @@ A test case = a sequence of events that produces a sequence of state changes.
 
 **Weakness:** If the software is missing a required feature entirely (defect of omission), white-box testing won't detect it — it only tests what's there.
 
-**Also useful in static testing:** Can be applied to pseudocode, dry runs, and code not yet ready for execution.
+**Also useful in static analysis:** White-box *analysis* (a form of static testing) can be applied to pseudocode or unexecutable code to review structure without running it. White-box *testing* (dynamic) requires executable code — don't confuse the two.
 
 > Black-box testing alone gives you no measure of actual code coverage. White-box testing provides that objective measurement.
 
@@ -212,7 +214,7 @@ Based on the tester's knowledge of:
 - Built from experience, user knowledge, and understanding of how software fails
 - Should be **regularly updated** based on defect analysis — checklists can wear out just like tests
 
-**Do NOT include in checklists:**
+**Do NOT include in checklists** *(industry guidance — not explicitly listed in the CTFL 4.0 syllabus):*
 - Items that can be checked automatically
 - Items better suited as entry/exit criteria
 - Items that are too general
