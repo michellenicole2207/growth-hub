@@ -1,6 +1,6 @@
 # ISTQB CTFL — Glossary
 
-All key terms from Chapters 1–5, sorted alphabetically.
+All key terms from Chapters 1–6, sorted alphabetically.
 Each entry shows the chapter(s) where it is tested and the cognitive level.
 
 > **How to use:** Read the term, try to recall the definition, then check it.
@@ -72,12 +72,21 @@ Testing performed after a defect has been fixed, to verify that the specific def
 **Configuration management (CM)** `Ch5` `💡 K2`
 The discipline of identifying, tracking, and controlling versions of testware and test objects. Ensures test cases can be linked to the correct software version and that testing is reproducible. Supporting context for FL-5.1.1 — not a standalone LO.
 
+**CI/CD — Continuous Integration / Continuous Delivery** `Ch6` `🧠 K1`
+A DevOps practice where every code change automatically triggers a build and a test run. Integrates testing directly into the development pipeline, enabling fast feedback and supporting shift left. CI/CD tools connect developer commits to test results without manual intervention.
+
+**Coverage measurement tool** `Ch6` `🧠 K1`
+A tool that measures how much of the code or requirements has been exercised by a test suite. Produces objective metrics such as statement coverage or branch coverage percentages.
+
 **Coverage criterion** `Ch4` `💡 K2`
 A rule or target used to determine whether a test suite is sufficient. Examples: all partitions exercised (EP), all branches exercised (branch coverage), all valid transitions exercised (state transition).
 
 ---
 
 ## D
+
+**Data-driven testing** `Ch6` `🧠 K1`
+A test automation approach where the test script is separated from the test data. Data is stored externally (e.g., a spreadsheet or database) and fed into the script at runtime, allowing the same script to run with many different data sets.
 
 **Decision table testing** `Ch4` `⚙️ K3`
 A black-box technique used to test combinations of conditions and their resulting actions. Each column in the table represents one rule (unique combination of conditions). Best suited for testing business logic with complex conditional behavior.
@@ -133,6 +142,7 @@ An experience-based technique where the tester simultaneously designs, executes,
 The visible, observable incorrect behavior of a system caused by the execution of a defect. Not all defects cause failures — some require specific conditions to trigger.
 
 **Fault attack** `Ch4` `💡 K2`
+
 A structured form of error guessing: the tester creates a list of likely errors and defects, then designs tests specifically to expose them.
 
 **Functional testing** `Ch2` `💡 K2`
@@ -143,6 +153,7 @@ A test type that evaluates *what* the system does — its functional completenes
 ## I
 
 **Impact analysis** `Ch2` `💡 K2`
+
 The process of evaluating which parts of a system are affected by a proposed change. Used before maintenance testing to define the scope of regression testing. Relies on good traceability.
 
 **Informal review** `Ch3` `🧠 K1`
@@ -156,10 +167,20 @@ An acronym defining the characteristics of a good user story: **I**ndependent, *
 
 ---
 
+## K
+
+**Keyword-driven testing** `Ch6` `🧠 K1`
+A test automation approach where test actions are expressed as readable keywords (e.g., `Login`, `ClickButton`, `VerifyText`). The keywords are implemented separately, allowing non-programmers to write and maintain tests without scripting knowledge.
+
+---
+
 ## M
 
 **Maintenance testing** `Ch2` `💡 K2`
 Testing performed on a system already in production when it needs to change. Triggered by modifications (enhancements, bug fixes, hot fixes), upgrades/migrations (new platform, OS, environment), or retirement (end-of-life data archiving).
+
+**Model-based testing** `Ch6` `🧠 K1`
+A test approach where test cases are automatically derived from a behavioral model of the system. The model (e.g., a state machine or decision table) serves as the test basis; a tool generates test cases from it. Reduces manual test design effort for complex systems.
 
 **Moderator** `Ch3` `🧠 K1`
 The role responsible for running a review meeting effectively. Handles facilitation, mediation, and time management, and ensures a safe environment for feedback. Required in technical reviews and inspections; optional in walkthroughs.
@@ -187,6 +208,9 @@ How urgently a defect needs to be fixed, from a business perspective. High prior
 
 **Product risk** `Ch5` `💡 K2`
 The risk that a system component or feature will fail to meet expected behavior or quality. Product risks drive the scope and depth of testing.
+
+**Performance testing tool** `Ch6` `🧠 K1`
+A tool that simulates concurrent user load on a system and measures response times, throughput, and resource consumption under stress. Used for load testing, stress testing, and endurance testing.
 
 **Project risk** `Ch5` `💡 K2`
 The risk to the project itself — schedule, budget, resources, or team. Managed through project management, not testing.
@@ -251,8 +275,8 @@ The percentage of executable statements exercised by a test suite. 100% statemen
 **Statement testing** `Ch4` `💡 K2`
 A white-box technique that designs test cases to exercise executable statements. Corresponds to statement coverage.
 
-**Static analysis** `Ch3` `💡 K2`
-Tool-assisted evaluation of a work product against a formal syntax — without executing it. Examples: linters, code analyzers. Finds issues like undefined variables, unreachable code, and coding standard violations.
+**Static analysis** `Ch3` `Ch6` `💡 K2`
+Tool-assisted evaluation of a work product against a formal syntax — without executing it. Examples: linters, code analyzers. Finds issues like undefined variables, unreachable code, and coding standard violations. In Ch6, static analysis tools are a named tool category that supports static testing activities.
 
 **Static testing** `Ch1` `Ch3` `💡 K2`
 Testing performed without executing the software. Includes both manual reviews and automated static analysis. Can find defects in non-executable work products (requirements, designs, test plans) that dynamic testing cannot reach.
@@ -266,6 +290,15 @@ A test level that tests the end-to-end behavior of the entire system against its
 ---
 
 ## T
+
+**Test automation** `Ch6` `🧠 K1`
+The use of tools to execute tests and compare actual results to expected results automatically, without manual intervention. Most effective for repetitive, stable, high-volume testing. Not a replacement for human judgment and exploratory testing.
+
+**Test automation framework** `Ch6` `🧠 K1`
+A set of rules, libraries, and tools that provide the structure and conventions for writing, organizing, and running automated test scripts. Examples include data-driven and keyword-driven frameworks.
+
+**Test management tool** `Ch6` `🧠 K1`
+A tool that supports the planning, monitoring, controlling, and reporting of test activities. Typically manages test cases, test suites, test execution schedules, and defect tracking in one place.
 
 **TDD — Test-Driven Development** `Ch2` `🧠 K1`
 A development practice where developers write a failing unit test first, then write code to make it pass, then refactor. Implements the early testing principle.
