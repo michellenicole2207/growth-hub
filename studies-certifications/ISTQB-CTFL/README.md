@@ -33,11 +33,16 @@ Typical exam traps, easily confused concept pairs, and tips to avoid falling for
 
 ---
 
-## Study Guide PDF
+## Study Guide PDFs
 
-All chapters, glossary, and common mistakes compiled into a single printable PDF.
+All chapters, glossary, and common mistakes compiled into a single printable PDF — available in English and Spanish.
 
-→ [ISTQB-CTFL-study-guide.pdf](./ISTQB-CTFL-study-guide.pdf)
+| Language | File |
+|---|---|
+| English | [pdfs/en/ISTQB-CTFL-study-guide-en.pdf](./pdfs/en/ISTQB-CTFL-study-guide-en.pdf) |
+| Español | [pdfs/es/ISTQB-CTFL-study-guide-es.pdf](./pdfs/es/ISTQB-CTFL-study-guide-es.pdf) |
+
+→ [pdfs/](./pdfs/)
 
 ---
 
